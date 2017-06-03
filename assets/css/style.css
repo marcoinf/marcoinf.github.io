@@ -49,11 +49,19 @@ body{
     padding: 0.5em 1em;    
     background-color: rgba(255, 255, 255, 0.90);
     border-radius: 0.2em;
-    text-shadow: 0.05em 0.05em black;
+    text-shadow: 0.05em 0.05em royalblue;
 }
 .list-links ul li a:hover{
     color: white;
     /*background-color: rgba(65, 105, 225, 0.90);*/
     background-color: #e74c3c;
     text-shadow: 0.05em 0.05em black;
+}
+.ovni{
+    position: fixed;
+    top: 200px;
+    left: 30px;
+}
+.ovni:hover{
+    left: 60px;
 }
