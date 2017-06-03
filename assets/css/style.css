@@ -5,18 +5,51 @@
 body{
     background-image: url("../images/pexels-photo-97077.jpeg");
 }
-.content{
+.site-content{
     display: flex;
+    flex-direction: column;
     justify-content: center; /* alinhamento horizontal */
     align-items: center; /* alinhamento vertical */
+    /*margin-top: 15%;*/
     height: 100vh;
 }
+.site-picture{
+    border-radius: 50%;
+    border: 0.5em royalblue solid;
+    margin-bottom: 2em;
+}
 .site-title{
-    flex: 1;
+    /*flex: 1;*/
     color: royalblue;
-    text-align: center;    
+    text-align: center;  
     font-size: 3em;
     text-shadow: 0.05em 0.05em black;
     padding: 1em;
-    background-color: rgba(255, 255, 255, 0.73);
+    background-color: rgba(255, 255, 255, 0.80);
+    width: 93%;
+}
+.list-links ul{
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 1em;
+}
+.list-links ul li{
+    margin: 1em;
+}
+.list-links ul li a{
+    color: royalblue;
+    font-size: 1.2em; 
+    text-decoration: none;
+    padding: 0.5em 1em;
+    
+    background-color: rgba(255, 255, 255, 0.90);
+    border-radius: 0.2em;
+    text-shadow: 0.05em 0.05em black;
+}
+.list-links ul li a:hover{
+    color: white;
+    background-color: rgba(65, 105, 225, 0.90);
+    text-shadow: 0.05em 0.05em black;
 }
