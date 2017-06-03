@@ -5,6 +5,9 @@
 body{
     background-image: url("../images/pexels-photo-97077.jpeg");
 }
+::selection{
+    background-color: rgba(231, 76, 60, 0.71);
+}
 .site-content{
     display: flex;
     flex-direction: column;
