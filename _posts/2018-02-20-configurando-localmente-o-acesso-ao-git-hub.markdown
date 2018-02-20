@@ -17,4 +17,4 @@ Ainda no Cmder digite:
 * ssh-keygen -t rsa -b 4096 -C "nome.sobrenome@gmail.com"
 
 ## Inserir no Git Hub
-Abra o arquivo '`c:\Users\marco\.ssh\id_rsa.pub`, copie o seu conteúdo e insera em Settings > SSH and GPG Keys > New SSH Key
+Abra o arquivo `c:\Users\marco\.ssh\id_rsa.pub`, copie o seu conteúdo e insera em Settings > SSH and GPG Keys > New SSH Key
