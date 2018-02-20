@@ -5,23 +5,23 @@ date:   2018-02-20 13:39:00 -0400
 categories: php
 ---
 ## Instalando o Cmder
-Baixar o [Cmder](http://cmder.net/)<br>
+Baixe o [Cmder](http://cmder.net/), decompacte na pasta `C:\Cmder` e coloque a pasta no PATH do Sistema Operacional.
 Obs.: baixar a versão Full. O Cmder, na versão Full, já vem com o Git instalado.<br>
 
 # Instalar e configuar o PHP
-Baixar o [PHP](http://php.net/downloads.php):
+Baixe o [PHP](http://php.net/downloads.php):
 * Descompactar na pasta "C:\php".
 * Colocar no PATH do Sistema Operacional.
-* Editar o arquivo "C:\php\php.ini" e remover o ponto-e-vírgula da linha `extension=php_pdo_mysql.dll`.
+* Editar o arquivo `C:\php\php.ini` e remover o ponto-e-vírgula da linha `extension=php_pdo_mysql.dll`.
 
 # Instalar o Composer
-Baixar e instalar o [Composer](https://getcomposer.org/download/)
+Baixe e instale o [Composer](https://getcomposer.org/download/)
 
 # Instalar o MySQL
-Baixar e instalar o [MySQL Server](https://dev.mysql.com/downloads/mysql/). Colocar a pasta `"C:\Program Files (x86)\MySQL\MySQL Server 5.7\bin\"` no PATH do Sistema Operacional.
+Baixe e instale o [MySQL Server](https://dev.mysql.com/downloads/mysql/). Colocar a pasta `"C:\Program Files (x86)\MySQL\MySQL Server 5.7\bin\"` no PATH do Sistema Operacional.
 
 # Instalar o PhpStorm
-Baixar e instalar o [PhpStorm](https://www.jetbrains.com/phpstorm/).
+Baixe e instale o [PhpStorm](https://www.jetbrains.com/phpstorm/).
 
 # Realizando os testes
 Abra o Cmder e digite os seguintes comandos:
