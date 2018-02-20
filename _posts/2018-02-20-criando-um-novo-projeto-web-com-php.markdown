@@ -14,6 +14,7 @@ git clone git@github.com:marcoaugustoandrade/app_escolar.git
 4) Crie as pastas `App\Model`, `App\DAO`, `views` e `database`
 
 5) Crie um arquivo na raiz do projeto denominado 'composer.json' e coloque o seguinte conteúdo:
+<pre>
 {
   "autoload": {
     "psr-4": {
@@ -24,6 +25,7 @@ git clone git@github.com:marcoaugustoandrade/app_escolar.git
     "twbs/bootstrap" : "4.0.0"
   }
 }
+</pre>
 
 6) No Cmder rode o comando `composer install` para instalar as dependências e gerar o autoload.
 Observer que será criada uma pasta 'vendor', contendo o Bootstrap (versão 4.0.0) e os autoloads das classes.
