@@ -12,9 +12,9 @@ Abra o Cmder e digite os seguintes comandos:
 git config --global user.name "Nome Completo"
 git config --global user.email "nome.sobrenome@gmail.com"
 
-### Gerar chave RSA
+## Gerar chave RSA
 Ainda no Cmder digite:
 ssh-keygen -t rsa -b 4096 -C "nome.sobrenome@gmail.com"
 
-### Inserir no Git Hub
+## Inserir no Git Hub
 Abra o arquivo 'c:\Users\marco\.ssh\id_rsa.pub', copie o seu conteúdo e insera em Settings > SSH and GPG Keys > New SSH Key
