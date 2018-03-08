@@ -17,7 +17,7 @@ Requisitos para o projeto:
 * Ser disponibilizado no Git Hub e ter participação dos 2 componentes do grupo.
 * Ter pelo menos 1 classe além da classe Usuario.
 * Desenvolver o CRUD na view para essa classe.
-* Utilizar o framework Bootstrap 4.
+* Utilizar o framework Bootstrap 4, Materialize ou Foundation.
 * Implementar a autenticação com sessão.
 * Ser possível alterar o e-mail e a senha do usuário.
 
