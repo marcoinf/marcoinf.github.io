@@ -7,9 +7,9 @@ categories: php
 
 ## Avaliação da disciplina de Desenvolvimento de Programação Web - Turma 2016
 ### Trabalho prático 1
-Valor: **40 pontos**
-Data da entrega: **22/03/2018**
-**Em grupo de 2 componentes.**
+Valor: **40 pontos**<br>
+Data da entrega: **22/03/2018**<br>
+**Em grupo de 2 componentes.**<br>
 
 Desenvolver um aplicativo web utilizando a linguagem PHP sem frameworks, com no mínimo 1 classe (tema livre).
 
@@ -22,5 +22,5 @@ Requisitos para o projeto:
 * Ser possível alterar o e-mail e a senha do usuário.
 
 ### Apresentação do trabalho prático 1
-Valor: **15 pontos**
-Data da apresentação: **22/03/2018**
+Valor: **15 pontos**<br>
+Data da apresentação: **22/03/2018**<br>
