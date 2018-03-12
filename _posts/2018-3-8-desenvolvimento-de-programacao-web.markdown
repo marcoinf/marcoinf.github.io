@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Disciplina Desenvolvimento de Programação - Turma 2016"
+title: "Disciplina Desenvolvimento de Programação Web - Turma 2016"
 date:   2018-08-03 13:10:00 -0400
 categories: php
 ---
