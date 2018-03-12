@@ -36,6 +36,6 @@ categories: algoritmos
 
 ## Planos
 [Plano de aula](https://docs.google.com/spreadsheets/d/164lmjU63DAGTboSR4n-ktQv8ZjIHVNnaY3RAg2m2ksc/edit?usp=sharing)
-Obs.: As datas podem mudar em função do calendário escolar.
 
-[Plano de ensino]()
+<br>Obs.: As datas podem mudar em função do calendário escolar.
+<br>Obs.: O Plano de Ensino está disponível no portal do aluno.
