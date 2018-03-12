@@ -34,7 +34,7 @@ categories: algoritmos
   - Valor: **20 pontos**
   - Descrição: a definir
 
-
+## Planos
 [Plano de aula](https://docs.google.com/spreadsheets/d/164lmjU63DAGTboSR4n-ktQv8ZjIHVNnaY3RAg2m2ksc/edit?usp=sharing)
 Obs.: As datas podem mudar em função do calendário escolar.
 
