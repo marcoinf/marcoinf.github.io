@@ -6,7 +6,7 @@ categories: algoritmos
 ---
 
 ## Lista de exercícios
-* [Lista 1](../downloads/algortimos/lista1.pdf)
+* [Lista 1](http://marcoandra.de/downloads/algortimos/lista1.pdf)
 * Lista 2
 * Lista 3
 * Lista 4
