@@ -14,6 +14,12 @@ categories: algoritmos
 
 ## Avaliação da disciplina de Algortimos e Lógica de Programação - Turma 2018
 
+- Dashes work just as well
+- And if you have sub points, put two spaces before the dash or star:
+  - Like this
+  - And this
+  
+  
 * **Prova 1**
  * Data: **16/04/2018**
  * Valor: **25 pontos**
