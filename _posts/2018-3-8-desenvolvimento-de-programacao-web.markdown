@@ -5,7 +5,7 @@ date:   2018-08-03 13:10:00 -0400
 categories: php
 ---
 
-## Avaliação da disciplina de Desenvolvimento de Programação Web - Turma 2016
+## Avaliação da disciplina
 ### Trabalho prático 1
 Valor: **40 pontos**<br>
 Data da entrega: **22/03/2018**<br>
