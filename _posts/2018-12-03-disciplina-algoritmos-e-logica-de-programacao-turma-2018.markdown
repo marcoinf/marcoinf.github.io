@@ -12,7 +12,7 @@ categories: algoritmos
 * Lista 4
 * Lista 5
 
-## Avaliação da disciplina de Algortimos e Lógica de Programação - Turma 2018
+## Avaliação da disciplina
 
 - **Prova 1**
   - Data: **16/04/2018**
