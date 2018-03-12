@@ -19,10 +19,10 @@ categories: algoritmos
  * Valor: **25 pontos**
  * Conteúdo: Variáveis: tipos, definição e atribuição. Constantes. Operadores de atribuição, aritméticos, relacionais e lógicos. Estruturas de decisão.
   
-* **Prova 2**
- * Data: **a definir**
- * Valor: **25 pontos**
- * Conteúdo: Conteúdo visto até o momento. Laços de repetição.
+- **Prova 2**
+ - Data: **a definir**
+ - Valor: **25 pontos**
+ - Conteúdo: Conteúdo visto até o momento. Laços de repetição.
   
 * **Prova 3**
  * Data: **a definir**
