@@ -4,6 +4,9 @@ title: "Disciplina Algoritmos e Lógica de Programação - Turma 2018"
 date:   2018-12-03 19:09:00 -0400
 categories: algoritmos
 ---
+## Materiais
+* [Slide 1: variavéis, constantes, entrada e saída](https://github.com/marcoinf/marcoinf.github.io/raw/master/downloads/algoritmos/Slide-1-variaveis-constantes-entrada-saida.pdf)
+* [Slide 2: operadores](https://github.com/marcoinf/marcoinf.github.io/raw/master/downloads/algoritmos/Slide-2-operadores.pdf)
 
 ## Lista de exercícios
 * [Lista 1](https://github.com/marcoinf/marcoinf.github.io/raw/master/downloads/algoritmos/lista-1.pdf)
