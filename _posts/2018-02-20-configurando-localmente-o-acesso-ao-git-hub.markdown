@@ -9,8 +9,8 @@ Caso tenha uma conta no Git Hub [faça login](https://github.com/login). Senão 
 
 ## Configurar localmente o Git
 Abra o Cmder e digite os seguintes comandos:
-* git config --global user.name "Nome Completo"
-* git config --global user.email "nome.sobrenome@gmail.com"
+* git config - -global user.name "Nome Completo"
+* git config - -global user.email "nome.sobrenome@gmail.com"
 
 ## Gerar chave RSA
 Ainda no Cmder digite:
