@@ -11,7 +11,7 @@ categories: algoritmos
 
 ## Lista de exercícios
 * [Lista 1](https://github.com/marcoinf/marcoinf.github.io/raw/master/downloads/algoritmos/lista-1.pdf)
-* [Resolução do exercícios da lista 1](https://github.com/marcoaugustoandrade/algoritmos-lista-1)
+* [Resolução dos exercícios da lista 1](https://github.com/marcoaugustoandrade/algoritmos-lista-1)
 * [Lista 2](https://github.com/marcoinf/marcoinf.github.io/raw/master/downloads/algoritmos/lista-2.pdf)
 * Lista 3
 * Lista 4
