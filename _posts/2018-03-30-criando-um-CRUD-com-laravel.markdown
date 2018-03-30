@@ -5,16 +5,16 @@ date:   2018-03-30 12:51:00 -0400
 categories: php
 ---
 
-Uma cópia deste projeto pode ser obtido em (app_estoque_laravel)[https://github.com/marcoaugustoandrade/app_estoque_laravel]
+Uma cópia deste projeto pode ser obtido em [app_estoque_laravel](https://github.com/marcoaugustoandrade/app_estoque_laravel)
 
 Pré-requisitos:
-* (Configurar o ambiente de desenvolvimento)[http://marcoandra.de/php/2018/02/20/configurando-o-ambiente-para-desenvolvimento-web-com-php.html]
-* (Configurar o Git Hub localmente)[http://marcoandra.de/php/2018/02/20/configurando-localmente-o-acesso-ao-git-hub.html]
+* [Configurar o ambiente de desenvolvimento](http://marcoandra.de/php/2018/02/20/configurando-o-ambiente-para-desenvolvimento-web-com-php.html)
+* [Configurar o Git Hub localmente](http://marcoandra.de/php/2018/02/20/configurando-localmente-o-acesso-ao-git-hub.html)
 
 
 ## Configuração básica do projeto
 
-Crie um repositório no (Git Hub)[https://github.com/] denominado `app_estoque_laravel`.
+Crie um repositório no [Git Hub](https://github.com/) denominado `app_estoque_laravel`.
 
 Abra o console (Cmder) e acesse a pasta de projetos:
 {% highlight bash %}
