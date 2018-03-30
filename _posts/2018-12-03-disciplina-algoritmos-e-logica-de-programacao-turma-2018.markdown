@@ -7,11 +7,12 @@ categories: algoritmos
 ## Materiais
 * [Slide 1: variavéis, constantes, entrada e saída](https://github.com/marcoinf/marcoinf.github.io/raw/master/downloads/algoritmos/Slide-1-variaveis-constantes-entrada-saida.pdf)
 * [Slide 2: operadores](https://github.com/marcoinf/marcoinf.github.io/raw/master/downloads/algoritmos/Slide-2-operadores.pdf)
+* [Slide 3: estruturas de decisão](https://github.com/marcoinf/marcoinf.github.io/raw/master/downloads/algoritmos/Slide-3-estruturas-de-decisao.pdf)
 
 ## Lista de exercícios
 * [Lista 1](https://github.com/marcoinf/marcoinf.github.io/raw/master/downloads/algoritmos/lista-1.pdf)
 * [Resolução do exercícios da lista 1](https://github.com/marcoaugustoandrade/algoritmos-lista-1)
-* Lista 2
+* [Lista 2](https://github.com/marcoinf/marcoinf.github.io/raw/master/downloads/algoritmos/lista-2.pdf)
 * Lista 3
 * Lista 4
 * Lista 5
