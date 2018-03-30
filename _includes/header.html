@@ -1,10 +1,34 @@
 <header class="header">
-    <h1>Prof. Marco Antonio Andrade</h1>
     <nav>
-        <ul>
-           <li><a href="/index.html">Início</a></li>
-           <li><a href="/posts.html">Posts</a></li>
-           <li><a href="/contato.html">Contato</a></li>
+        <ul class="header__menu-acessivel">
+            <li><a href="#conteudo" accesskey="1">Ir para o conteúdo <span>1</span></a></li>
+            <li><a href="#menu" accesskey="2">Ir para o menu <span>2</span></a></li>
+            <li><a href="#rodape" accesskey="3">Ir para o rodapé <span>3</span></a></li>
+        </ul>
+    </nav>
+    <h1 class="header__title"><a href="/" class="header__title-link">Prof. Marco Antonio Augusto de Andrade</a></h1>
+    <nav class="header__menu" id="menu">
+        <ul class="header__menu-lista">
+            {% if page.layout == 'home' %} 
+            <li><a href="/" class="header__menu-link header__menu--active">Início</a></li>
+            {% else %}
+                <li><a href="/" class="header__menu-link">Início</a></li>
+            {% endif %}
+            {% if page.title == 'Disciplinas' or page.type == 'disciplinas' %} 
+            <li><a href="/disciplinas" class="header__menu-link header__menu--active">Disciplinas</a></li>
+            {% else %}
+                <li><a href="/disciplinas" class="header__menu-link">Disciplinas</a></li>
+            {% endif %}
+            {% if page.title == 'Posts' or page.layout == 'post' %} 
+                <li><a href="/posts" class="header__menu-link header__menu--active">Posts</a></li>
+            {% else %}
+                <li><a href="/posts" class="header__menu-link">Posts</a></li>
+            {% endif %}
+            {% if page.title == 'Projetos' %} 
+                <li><a href="/projetos" class="header__menu-link header__menu--active">Projetos</a></li>
+            {% else %}
+                <li><a href="/projetos" class="header__menu-link">Projetos</a></li>
+            {% endif %}
         </ul>
     </nav>
 </header>

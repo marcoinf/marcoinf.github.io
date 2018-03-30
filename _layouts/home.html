@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="theme-color" content="#2980B9">
+    <title>
+        {% if page.title %} {{ page.title }}
+        {% else %} {{ site.title }}
+        {% endif %}
+    </title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/highlight.css">
+</head>
+<body>
+    {% include header.html %}
+    <main class="index" id="conteudo">
+        <div>
+            <img src="assets/images/marco.gif" class="index__photo">
+        </div>
+        <div class="index__texto">
+            <p>Sou professor no IFRO (Instituto Federal de Rondônia) Campus Vilhena, atuando no CST em ADS (Análise e Desenvolvimento de Sistemas).</p>
+            <p>Desenvolvo projetos e ministro aulas em disciplinas de programção com foco em tecnologias como HTML5, CSS3, JavaScript, Bootstrap, Materialize, React, Axios, NodeJS, ExpressJS, PHP, Laravel, MySQL, MongoDB e Redis</p>
+            <p>Para me contactar envie um email para <i>marco.andrade at ifro.edu.br</i></p>
+            <p>Você pode conferir meu currículo completo na <a href="#">Plataforma Lattes</a>.</p>
+        </div>
+    </main>
+    {% include footer.html %}
+    {% include analytics.html %}
+</body>
+</html>
