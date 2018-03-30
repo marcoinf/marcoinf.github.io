@@ -5,7 +5,7 @@ date:   2018-03-30 12:51:00 -0400
 categories: php
 ---
 
-Uma cópia deste projeto pode ser obtido em [app_estoque_laravel](https://github.com/marcoaugustoandrade/app_estoque_laravel)
+Uma cópia deste projeto pode ser obtida em [app_estoque_laravel](https://github.com/marcoaugustoandrade/app_estoque_laravel)
 
 Pré-requisitos:
 * [Configurar o ambiente de desenvolvimento](http://marcoandra.de/php/2018/02/20/configurando-o-ambiente-para-desenvolvimento-web-com-php.html)
@@ -50,10 +50,10 @@ quit
 
 Abra o projeto no PhpStorm.
 
-Edite o arquivo o .env e altere as seguintes configurações:
-DB_DATABASE=db_estoque_laravel
-DB_USERNAME=root
-DB_PASSWORD=Suporte99
+Edite o arquivo o .env e altere as seguintes configurações:<br>
+DB_DATABASE=db_estoque_laravel<br>
+DB_USERNAME=root<br>
+DB_PASSWORD=Suporte99<br>
 
 Crie o model Produto no console (Cmder):
 {% highlight bash %}
@@ -136,10 +136,10 @@ php artisan key:generate
 
 Abra o projeto no PhpStorm.
 
-Configure o arquivo `.env`:
-DB_DATABASE=db_estoque_laravel
-DB_USERNAME=root
-DB_PASSWORD=Suporte99
+Configure o arquivo `.env`:<br>
+DB_DATABASE=db_estoque_laravel<br>
+DB_USERNAME=root<br>
+DB_PASSWORD=Suporte99<br>
 
 Rode o `migrations` para criar a estrutura no banco de dados:
 {% highlight bash %}
