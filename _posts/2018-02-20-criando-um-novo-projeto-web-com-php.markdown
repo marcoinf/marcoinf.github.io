@@ -6,15 +6,18 @@ categories: php
 ---
 1) Abra o [Git Hub](http://github.com) e crie um novo repositório denominado `app_escolar`.
 
-2) No Cmder entre na pasta 'projetos' e clone o projeto que acabou de criar no Git Hub:
+2) No console (Cmder entre na pasta 'projetos' e clone o projeto que acabou de criar no Git Hub:
+{% highlight bash %}
+cd projetos
 git clone git@github.com:marcoaugustoandrade/app_escolar.git
+{% endhighlight %}
 
-3) Abra a pasta `projetos/app_escolar` no PhpStorm.
+3) Abra a pasta `app_escolar` no PhpStorm.
 
 4) Crie as pastas `App\Model`, `App\DAO`, `views` e `database`
 
 5) Crie um arquivo na raiz do projeto denominado 'composer.json' e coloque o seguinte conteúdo:
-<pre>
+{% highlight php %}
 {
   "autoload": {
     "psr-4": {
@@ -25,7 +28,7 @@ git clone git@github.com:marcoaugustoandrade/app_escolar.git
     "twbs/bootstrap" : "4.0.0"
   }
 }
-</pre>
+{% endhighlight %}
 
-6) No Cmder rode o comando `composer install` para instalar as dependências e gerar o autoload.
+6) No console (Cmder) rode o comando `composer install` para instalar as dependências e gerar o autoload.
 Observer que será criada uma pasta 'vendor', contendo o Bootstrap (versão 4.0.0) e os autoloads das classes.

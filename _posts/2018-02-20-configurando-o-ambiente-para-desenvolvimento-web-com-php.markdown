@@ -25,7 +25,9 @@ Baixe e instale o [PhpStorm](https://www.jetbrains.com/phpstorm/).
 
 # Realizando os testes
 Abra o Cmder e digite os seguintes comandos:
-* php --version
-* composer --version
-* git --version
-* mysql -u root -p
+{% highlight php %}
+php --version
+composer --version
+git --version
+mysql -u root -p
+{% endhighlight %}
