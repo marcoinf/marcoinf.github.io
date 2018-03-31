@@ -59,7 +59,7 @@ Crie o model Produto no console (Cmder):
 {% highlight bash %}
 php artisan make:model Produto -m
 {% endhighlight %}
-Obs.: todos os models criados ficam na pasta `app`.
+<div class="alert-yellow">Todos os models criados ficam na pasta app.</div>
 
 Configure o migrations criado para este model. Todos os migrations ficam na pasta `database\migrations`. Adicione as seguintes linhas no método `up`:
 {% highlight php %}
@@ -74,7 +74,7 @@ Rode o migrations no console (Cmder) para que a estrutura das tabelas sejam cria
 php artisan migrate
 {% endhighlight %}
 
-Obs.: Caso queira alterar as estruturas das tabelas no banco de dados você pode usar o comando `php artisan migrate:reset` e depois rodar novamente o comando `php artisan migrate` para criar novamente as estruturas das tabelas no banco de dados.
+<div class="alert-yellow">Caso queira alterar as estruturas das tabelas no banco de dados você pode usar o comando <b>php artisan migrate:reset</b> e depois rodar novamente o comando <b>php artisan migrate</b> para criar novamente as estruturas das tabelas no banco de dados.</div>
 
 Configure o seeder abrindo o arquivo `DatabaseSeeder.php` que fica na pasta `database\seeds`. Dentro do método `run` adicione:
 {% highlight php %}
@@ -163,7 +163,7 @@ Crie o controller `ProdutoController` no console:
 {% highlight bash %}
 php artisan make:controller ProdutoController
 {% endhighlight %}
-Obs.: os controllers ficam na pasta `app\Http\Controllers`
+<div class="alert-yellow">Os controllers ficam na pasta app\Http\Controllers</div>
 
 Abra o ProdutoController e crie o método `pesquisar`:
 {% highlight php %}
@@ -188,7 +188,7 @@ public function pesquisar()
         }
 }
 {% endhighlight %}
-Observação importante: verifique se houve a importação do App\Produto no ProdutoController. Deve estar assim abaixo do namespace: `use App\Produto;`.
+<div class="alert-red">Observação importante: verifique se houve a importação do App\Produto no ProdutoController. Deve estar assim abaixo do namespace: <b>use App\Produto;</b>.</div>
 	
 Abra o console e suba o servidor:
 {% highlight bash %}
@@ -283,9 +283,11 @@ Vamos criar um formulário, dentro da nossa view, para que possamos filtrar os r
 
 {% endhighlight %}
 
-As seguintes observações são importantes:
-1) A action deste formulário aponta para a rota /produtos/pesquisar com o método post que precisamos criar no arquivo de rota.
-2) É necessário este campo oculto com name _token e o value={{{ csrf_token() }}}.
+<div class="alert-red">
+As seguintes observações são importantes:<br>
+1) A action deste formulário aponta para a rota /produtos/pesquisar com o método post que precisamos criar no arquivo de rota.<br>
+2) É necessário este campo oculto com name _token e o value=\{\{\{ csrf_token() }}}.
+</div>
 
 Abra o arquivo `routes\web.php` e adicione a seguinte rota:
 {% highlight php %}
@@ -305,7 +307,7 @@ public function pesquisar()
         // Chama a view produto.pesquisar e envia os produtos encontrados
         return view('produto.pesquisar')->with('produtos', $produtos);}
 {% endhighlight %}
-Obs.: ao digitar a classe Input verifique se foi importado `use Illuminate\Support\Facades\Input;`.
+<div class="alert-yellow">Ao digitar a classe Input verifique se foi importado <b>use Illuminate\Support\Facades\Input;</b>.</div>
 
 Abra o endereço `http://127.0.0.1:8000/produtos/pesquisar` no  navegador (Chrome, Firefox) e verifique e faça um filtro na relação de produtos.
 
@@ -353,8 +355,8 @@ Como o ProdutoController está retornando a view inserir.blade.php precisamos cr
     </div>
 {% endhighlight %}
 
-Obs.: Não esqueça do `csrf_token()`.
-Obs.: Não esqueça do CSS no cabeçalho do arquivo `<link href="../../css/app.css" rel="stylesheet">`.
+<div class="alert-red">Não esqueça do <b>csrf_token()</b>.</div>
+Não esqueça do CSS no cabeçalho do arquivo `<link href="../../css/app.css" rel="stylesheet">`.
 
 Para testar abra o endereço http://127.0.0.1:8000/produtos/inserir no navegador.
 
@@ -477,7 +479,8 @@ E agora vamos criar a view `alterar.blade.php` dentro da pasta `resources\views\
     </form>
 </div>
 {% endhighlight %}
-Obs.: não esqueça de criar a estrutura básica do documento HTML, alterar o lang e o title e importar o CSS.
+
+<div class="alert-yellow">Não esqueça de criar a estrutura básica do documento HTML, alterar o lang e o title e importar o CSS.</div>
 
 Vamos alterar o nosso método `mostrar_alterar` para que capture os dados e envie a view `alterar.blade.php`:
 {% highlight php %}

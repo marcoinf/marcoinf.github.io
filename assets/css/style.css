@@ -238,3 +238,35 @@ a:hover{
     }
 }
 /* end post/page content */
+
+/* begin mesages */
+.highlighter-rouge{
+    background-color: rgb(219, 219, 219);
+    border-radius: 5px;
+    padding: 0.2em;
+}
+.alert-blue{
+    border-left: 0.5em #337ab7 solid;
+    background-color: rgba(51,122,183, 0.801)
+    color: white;
+    padding: 1em;
+}
+.alert-green{
+    border-left: 0.5em #5cb85c solid;
+    background-color: rgba(92,184,92, 0.801);
+    color: white;
+    padding: 1em;
+}
+.alert-red{
+    border-left: 0.5em #d9534f solid;
+    background-color: rgba(217,83,79, 0.801);
+    color: white;
+    padding: 1em;
+}
+.alert-yellow{
+    border-left: 0.5em #e7da5e solid;
+    background-color: rgba(231,218,94, 0.801);
+    color: black;
+    padding: 1em;
+}
+/* end mesages*/
