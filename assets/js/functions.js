@@ -8,3 +8,12 @@ function scrollFunction() {
         btn_top.style.display = "none";
     }
 }
+
+var search = document.querySelector("#box-search");
+function show_search(){
+    search.style.display = "block";
+    document.querySelector("#search-input").focus();
+}
+function close_search(){
+    search.style.display = "none";
+}

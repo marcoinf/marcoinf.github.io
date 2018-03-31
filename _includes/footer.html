@@ -8,3 +8,14 @@
     </p>
 </footer>
 <script src="/assets/js/functions.js"></script>
+
+<!-- script pointing to jekyll-search.js -->
+<script src="/assets/js/search.js"></script>
+
+<script>
+var sjs = SimpleJekyllSearch({
+    searchInput: document.getElementById('search-input'),
+    resultsContainer: document.getElementById('results-container'),
+    json: '/search.json'
+})
+</script>

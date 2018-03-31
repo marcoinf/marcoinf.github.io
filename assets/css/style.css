@@ -281,3 +281,50 @@ a:hover{
     padding: 1em;
 }
 /* end mesages*/
+
+/* begin search box */
+.search{
+    background-color: #5499C7;
+    /*padding: 1em;*/
+    display: none;
+}
+.search__input{
+    border-radius: 0.2em;
+    border: none;
+    width: 80%;
+    padding: 1.5em;
+    margin: 1em;
+}
+.search__icon{
+    /*display: none;*/
+    cursor: pointer;
+}
+.search__results{
+    background-color: #5499C7;
+    list-style: none;
+    padding: 1.2em;
+}
+.search__results > li> a{
+    color: white;
+    display: block;
+    padding: 1em 0;
+}
+.search__results > li > a:hover{
+    background-color: white;
+    color: #5499C7;
+    border: none;
+}
+@media (min-width: 768px){
+    .search__input{
+        margin: 1em 7.2em;
+        width: 60%;
+    }
+    .search__icon{
+        display: inline;
+        padding-top: 1em;
+    }
+    .search__results > li > a{
+        padding: 1em 5em;
+    }
+}
+/* end search box */
