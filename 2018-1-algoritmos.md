@@ -5,17 +5,21 @@ permalink: /disciplinas/2018/1/algoritmos
 type: disciplinas
 ---
 ## Materiais
-* [Slide 1: variavéis, constantes, entrada e saída](https://github.com/marcoinf/marcoinf.github.io/raw/master/downloads/algoritmos/Slide-1-variaveis-constantes-entrada-saida.pdf)
-* [Slide 2: operadores](https://github.com/marcoinf/marcoinf.github.io/raw/master/downloads/algoritmos/Slide-2-operadores.pdf)
-* [Slide 3: estruturas de decisão](https://github.com/marcoinf/marcoinf.github.io/raw/master/downloads/algoritmos/Slide-3-estruturas-de-decisao.pdf)
+* [Slide 1: variavéis, constantes, entrada e saída](https://marcoaugustoandrade.github.io/slides/algoritmos/1-variaveis-constantes-entrada-saida/)
+* [Slide 2: operadores](https://marcoaugustoandrade.github.io/slides/algoritmos/2-operadores/)
+* [Slide 3: estruturas de decisão](https://marcoaugustoandrade.github.io/slides/algoritmos/3-estruturas-de-decisao/)
 
 ## Lista de exercícios
 * [Lista 1](https://github.com/marcoinf/marcoinf.github.io/raw/master/downloads/algoritmos/lista-1.pdf)
 * [Resolução dos exercícios da lista 1](https://github.com/marcoaugustoandrade/algoritmos-lista-1)
 * [Lista 2](https://github.com/marcoinf/marcoinf.github.io/raw/master/downloads/algoritmos/lista-2.pdf)
+* Resolução dos exercícios da lista 2
 * Lista 3
+* Resolução dos exercícios da lista 3
 * Lista 4
+* Resolução dos exercícios da lista 4
 * Lista 5
+* Resolução dos exercícios da lista 5
 
 ## Avaliação da disciplina
 
