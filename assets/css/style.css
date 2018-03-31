@@ -239,6 +239,17 @@ a:hover{
 }
 /* end post/page content */
 
+/* begin comments */
+.comments{
+    margin: 0.5em;
+}
+@media (min-width: 768px){
+    .comments{
+        margin: 1em 7em;
+    }
+}
+/* end comments*/
+
 /* begin mesages */
 .highlighter-rouge{
     background-color: rgb(219, 219, 219);
@@ -247,7 +258,7 @@ a:hover{
 }
 .alert-blue{
     border-left: 0.5em #337ab7 solid;
-    background-color: rgba(51,122,183, 0.801)
+    background-color: rgba(51,122,183, 0.801);
     color: white;
     padding: 1em;
 }
