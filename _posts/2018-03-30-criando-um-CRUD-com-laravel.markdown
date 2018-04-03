@@ -12,56 +12,56 @@ Pré-requisitos:
 * [Configurar o Git Hub localmente](http://marcoandra.de/php/2018/02/20/configurando-localmente-o-acesso-ao-git-hub.html)
 
 
-## Configuração básica do projeto
+## Passo 1: Configuração básica do projeto
 
-Crie um repositório no [Git Hub](https://github.com/) denominado `app_estoque_laravel`.
+1.1: Crie um repositório no [Git Hub](https://github.com/) denominado `app_estoque_laravel`.
 
-Abra o console (Cmder) e acesse a pasta de projetos:
+1.2: Abra o console (Cmder) e acesse a pasta de projetos:
 {% highlight bash %}
 cd projetos
 {% endhighlight %}
 
-Crie o aplicativo `app_estoque_laravel` (dentro da pasta projetos) com o seguinte comando:
+1.3: Crie o aplicativo `app_estoque_laravel` (dentro da pasta projetos) com o seguinte comando:
 {% highlight bash %}
 composer create-project laravel/laravel app_estoque_laravel
 {% endhighlight %}
 
-Acesse o diretório do aplicativo que acabou de criar:
+1.4: Acesse o diretório do aplicativo que acabou de criar:
 {% highlight bash %}
 cd app_estoque_laravel
 {% endhighlight %}
 
-Inicialize um repositório git:
+1.5: Inicialize um repositório git:
 {% highlight bash %}
 git init
 {% endhighlight %}
 
-Adicione o repositório remoto criado no Git Hub: 
+1.6: Adicione o repositório remoto criado no Git Hub: 
 {% highlight bash %}
 git remote add origin endereço_do_seu_repositório
 {% endhighlight %}
 
-Crie o banco de dados para o projeto:
+1.7: Crie o banco de dados para o projeto:
 {% highlight bash %}
 mysql -u root -p
 create database db_estoque_laravel;
 quit
 {% endhighlight %}
 
-Abra o projeto no PhpStorm.
+1.8: Abra o projeto no PhpStorm.
 
-Edite o arquivo o .env e altere as seguintes configurações:<br>
+1.9: Edite o arquivo o .env e altere as seguintes configurações:<br>
 DB_DATABASE=db_estoque_laravel<br>
 DB_USERNAME=root<br>
 DB_PASSWORD=Suporte99<br>
 
-Crie o model Produto no console (Cmder):
+1.10: Crie o model Produto no console (Cmder):
 {% highlight bash %}
 php artisan make:model Produto -m
 {% endhighlight %}
 <div class="alert-yellow">Todos os models criados ficam na pasta app.</div>
 
-Configure o migrations criado para este model. Todos os migrations ficam na pasta `database\migrations`. Adicione as seguintes linhas no método `up`:
+1.11: Configure o migrations criado para este model. Todos os migrations ficam na pasta `database\migrations`. Adicione as seguintes linhas no método `up`:
 {% highlight php %}
 $table->string('descricao');
 $table->integer('quantidade');
@@ -69,14 +69,14 @@ $table->decimal('valor', 15, 2);
 $table->date('data_vencimento')->nullable();
 {% endhighlight %}
 
-Rode o migrations no console (Cmder) para que a estrutura das tabelas sejam criadas:
+1.12: Rode o migrations no console (Cmder) para que a estrutura das tabelas sejam criadas:
 {% highlight bash %}
 php artisan migrate
 {% endhighlight %}
 
 <div class="alert-yellow">Caso queira alterar as estruturas das tabelas no banco de dados você pode usar o comando <b>php artisan migrate:reset</b> e depois rodar novamente o comando <b>php artisan migrate</b> para criar novamente as estruturas das tabelas no banco de dados.</div>
 
-Configure o seeder abrindo o arquivo `DatabaseSeeder.php` que fica na pasta `database\seeds`. Dentro do método `run` adicione:
+1.13: Configure o seeder abrindo o arquivo `DatabaseSeeder.php` que fica na pasta `database\seeds`. Dentro do método `run` adicione:
 {% highlight php %}
 DB::insert('insert into produtos (descricao, quantidade, valor, data_vencimento) values (?,?,?,?)', array('Arroz', 10, 10.50, '2018-12-01'));
 DB::insert('insert into produtos (descricao, quantidade, valor, data_vencimento) values (?,?,?,?)', array('Feijão', 8, 8.00, '2018-08-24'));
@@ -84,88 +84,88 @@ DB::insert('insert into produtos (descricao, quantidade, valor, data_vencimento)
 DB::insert('insert into produtos (descricao, quantidade, valor, data_vencimento) values (?,?,?,?)', array('Farinha', 20, 3.50, '2018-10-12'));
 {% endhighlight %}
 
-Rode o seeder no console:
+1.14: Rode o seeder no console:
 {% highlight bash %}
 php artisan db:seed
 {% endhighlight %}
 
-Vamos enviar o projeto para o nosso repositório no Git Hub:
+1.15: Vamos enviar o projeto para o nosso repositório no Git Hub:
 {% highlight bash %}
 git add .
 git commit -m "Estrutura inicial"
 git push -u origin master
 {% endhighlight %}
 
-## Configuração do projeto em outro computador
+## Passo 2: Configuração do projeto em outro computador
 
-Acesse a pasta de projetos:
+2.1: Acesse a pasta de projetos:
 {% highlight bash %}
 cd projetos
 {% endhighlight %}
 
-Clone o repositório:
+2.2: Clone o repositório:
 {% highlight bash %}
 git clone endereço_do repositório
 {% endhighlight %}
 
-Acesse o repositório
+2.3: Acesse o repositório
 {% highlight bash %}
 cd app_estoque_laravel
 {% endhighlight %}
 
-Rode o composer para instalar as depências:
+2.4: Rode o composer para instalar as depências:
 {% highlight bash %}
 composer install
 {% endhighlight %}
 
-Crie o banco de dados:
+2.5: Crie o banco de dados:
 {% highlight bash %}
 mysql -u root -p
 create database db_estoque_laravel
 {% endhighlight %}
 
-Duplique o arquivo .env.example:
+2.6: Duplique o arquivo .env.example:
 {% highlight bash %}
 cp .env.example .env
 {% endhighlight %}
 
-Crie a chave criptográfica:
+2.7: Crie a chave criptográfica:
 {% highlight bash %}
 php artisan key:generate
 {% endhighlight %}
 
-Abra o projeto no PhpStorm.
+2.8: Abra o projeto no PhpStorm.
 
-Configure o arquivo `.env`:<br>
+2.9: Configure o arquivo `.env`:<br>
 DB_DATABASE=db_estoque_laravel<br>
 DB_USERNAME=root<br>
 DB_PASSWORD=Suporte99<br>
 
-Rode o `migrations` para criar a estrutura no banco de dados:
+2.10: Rode o `migrations` para criar a estrutura no banco de dados:
 {% highlight bash %}
 php artisan migrate
 {% endhighlight %}
 
-Rodar o `seeder` para popular as tabelas com dados de exemplo:
+2.11: Rodar o `seeder` para popular as tabelas com dados de exemplo:
 {% highlight bash %}
 php artisan db:seed
 {% endhighlight %}
 
-Subir o servidor:
+2.12: Subir o servidor:
 {% highlight bash %}
 php artisan serve
 {% endhighlight %}
 
 
-## Criando um página para listar os produtos
+## Passo 3: Criando um página para listar os produtos
 
-Crie o controller `ProdutoController` no console:
+3.1: Crie o controller `ProdutoController` no console:
 {% highlight bash %}
 php artisan make:controller ProdutoController
 {% endhighlight %}
 <div class="alert-yellow">Os controllers ficam na pasta app\Http\Controllers</div>
 
-Abra o ProdutoController e crie o método `pesquisar`:
+3.2: Abra o ProdutoController e crie o método `pesquisar`:
 {% highlight php %}
 public function pesquisar()
 {
@@ -173,12 +173,12 @@ public function pesquisar()
 }
 {% endhighlight %}
 
-Abra o arquivo de rotas em `routes\web.php` e adicione a seguinte rota:
+3.3: Abra o arquivo de rotas em `routes\web.php` e adicione a seguinte rota:
 {% highlight php %}
 Route::get('/produtos/pesquisar', 'ProdutoController@pesquisar');
 {% endhighlight %}
 
-Agora, vamos configurar o método `pesquisar` do nosso ProdutoController:
+3.4: Agora, vamos configurar o método `pesquisar` do nosso ProdutoController:
 {% highlight php %}
 public function pesquisar()
 {
@@ -190,28 +190,28 @@ public function pesquisar()
 {% endhighlight %}
 <div class="alert-red">Observação importante: verifique se houve a importação do App\Produto no ProdutoController. Deve estar assim abaixo do namespace: <b>use App\Produto;</b>.</div>
 	
-Abra o console e suba o servidor:
+3.15: Abra o console e suba o servidor:
 {% highlight bash %}
 php artisan serve
 {% endhighlight %}
 
-Abra o endereço `http://127.0.0.1:8000/produtos/pesquisar` no  navegador (Chrome, Firefox) e verifique se foram listados todos os produtos da tabela `produtos`.
+3.16: Abra o endereço `http://127.0.0.1:8000/produtos/pesquisar` no  navegador (Chrome, Firefox) e verifique se foram listados todos os produtos da tabela `produtos`.
 
-A reponsabilidade da interface é da camada view. Então, vamos cria-la.
+3.17: A reponsabilidade da interface é da camada view. Então, vamos cria-la.
 
-Na pasta `resources\views` crie uma pasta denominda `produto`. É nessa pasta que iremos colocar todas as nossas views que trabalham com o model Produto.
+3.18: Na pasta `resources\views` crie uma pasta denominda `produto`. É nessa pasta que iremos colocar todas as nossas views que trabalham com o model Produto.
 Dentro desta pasta crie a view `pesquisar.blade.php`. Edite este arquivo e crie uma estrutura HTML básica.
 
-Além da estrutura básica (lang, title) vamos adicionar um H1 a nossa view `pesquisar.blade.php`:
+3.19: Além da estrutura básica (lang, title) vamos adicionar um H1 a nossa view `pesquisar.blade.php`:
 {% highlight html %}
 <div class="container">
 	<h1 class="mt-2">Pesquisa de produtos</h1>
 </div>
 {% endhighlight %}
 
-O Laravel já vem com o Bootstrap disponibilizado na pasta `public\css`. Assim, para utilizarmos basta chama-lo no cabeçalho do documento com `<link href="../../css/app.css" rel="stylesheet">` no cabeçalho da view.
+3.20: O Laravel já vem com o Bootstrap disponibilizado na pasta `public\css`. Assim, para utilizarmos basta chama-lo no cabeçalho do documento com `<link href="../../css/app.css" rel="stylesheet">` no cabeçalho da view.
 
-Antes de continuarmos vamos alterar nosso ProdutoController@pesquisar para que ele retorne a view que acabamos de criar:
+3.21: Antes de continuarmos vamos alterar nosso ProdutoController@pesquisar para que ele retorne a view que acabamos de criar:
 {% highlight php %}
 public function pesquisar()
 {
@@ -223,9 +223,9 @@ public function pesquisar()
 }
 {% endhighlight %}
 
-Abra o endereço `http://127.0.0.1:8000/produtos/pesquisar` no  navegador (Chrome, Firefox) e verifique se a view foi executada.
+3.22: Abra o endereço `http://127.0.0.1:8000/produtos/pesquisar` no  navegador (Chrome, Firefox) e verifique se a view foi executada.
 
-Vamos alterar, novamente, o nosso ProdutoController@pesquisar para que os dados do model Produto sejam repassados a nossa view:
+3.23: Vamos alterar, novamente, o nosso ProdutoController@pesquisar para que os dados do model Produto sejam repassados a nossa view:
 {% highlight php %}
 public function pesquisar()
 {
@@ -237,7 +237,7 @@ public function pesquisar()
 }
 {% endhighlight %}
 
-Vamos alterar a nossa view `pesquisar.blade.php` para tratar os dados recebidos do nosso controller:
+3.24: Vamos alterar a nossa view `pesquisar.blade.php` para tratar os dados recebidos do nosso controller:
 {% highlight html %}
     <div class="container">
 	<h1 class="mt-2">Pesquisa de produtos</h1>
@@ -255,7 +255,7 @@ Vamos alterar a nossa view `pesquisar.blade.php` para tratar os dados recebidos 
                 @foreach ($produtos as $p)
                     <tr>
                         <td>{ { $p->id } }</td>
-                        <td class="text-left">{ { $p->descricao } }</td>
+                        <td class="text-left"{ { $p->descricao } }</td>
                         <td>{ { $p->quantidade } }</td>
                         <td>{ { $p->valor } }</td>
                         <td>{ { $p->data_vencimento } }</td>
@@ -266,9 +266,9 @@ Vamos alterar a nossa view `pesquisar.blade.php` para tratar os dados recebidos 
     </div>
 {% endhighlight %}
 
-Abra o endereço `http://127.0.0.1:8000/produtos/pesquisar` no  navegador (Chrome, Firefox) e verifique como a view foi executada.
+3.25: Abra o endereço `http://127.0.0.1:8000/produtos/pesquisar` no  navegador (Chrome, Firefox) e verifique como a view foi executada.
 
-Vamos criar um formulário, dentro da nossa view, para que possamos filtrar os resultados:
+3.26: Vamos criar um formulário, dentro da nossa view, para que possamos filtrar os resultados:
 {% highlight html %}
     
 	<h1 class="mt-2">Pesquisa de produtos</h1>
@@ -289,12 +289,12 @@ As seguintes observações são importantes:<br>
 2) É necessário este campo oculto com name _token e o value={ { { csrf_token() } } }.
 </div>
 
-Abra o arquivo `routes\web.php` e adicione a seguinte rota:
+3.27: Abra o arquivo `routes\web.php` e adicione a seguinte rota:
 {% highlight php %}
 Route::post('/produtos/pesquisar', 'ProdutoController@pesquisar');
 {% endhighlight %}
 
-Devemos alterar o nosso método `pesquisar` do ProdutoController para que recebe os dados do formulário e faça um filtro:
+3.28: Devemos alterar o nosso método `pesquisar` do ProdutoController para que recebe os dados do formulário e faça um filtro:
 {% highlight php %}
 public function pesquisar()
 {
@@ -309,17 +309,17 @@ public function pesquisar()
 {% endhighlight %}
 <div class="alert-yellow">Ao digitar a classe Input verifique se foi importado <b>use Illuminate\Support\Facades\Input;</b>.</div>
 
-Abra o endereço `http://127.0.0.1:8000/produtos/pesquisar` no  navegador (Chrome, Firefox) e verifique e faça um filtro na relação de produtos.
+3.29: Abra o endereço `http://127.0.0.1:8000/produtos/pesquisar` no  navegador (Chrome, Firefox) e verifique e faça um filtro na relação de produtos.
 
 
-## Inserindo novos produtos
+## Passo 4: Inserindo novos produtos
 
-Inicialmente, precisamos criar uma rota para mostrar o formulário para inserir novos produtos. Abra o arquivo de rotas localizado em `routes\web.php` e adicione a seguinte rota:
+4.1: Inicialmente, precisamos criar uma rota para mostrar o formulário para inserir novos produtos. Abra o arquivo de rotas localizado em `routes\web.php` e adicione a seguinte rota:
 {% highlight php %}
 Route::get('/produtos/inserir', 'ProdutoController@mostrar_inserir');
 {% endhighlight %}
 
-Abra o ProdutoController em 'App\Http\Controllers' e crie o método `inserir`:
+4.2: Abra o ProdutoController em 'App\Http\Controllers' e crie o método `inserir`:
 {% highlight php %}
 public function mostrar_inserir()
 {
@@ -327,7 +327,7 @@ public function mostrar_inserir()
 }
 {% endhighlight %}
 
-Como o ProdutoController está retornando a view inserir.blade.php precisamos cria-la em 'resources\views\produto'. Edite o arquivo, crie a estrutura HTML básica, altere o lang e o title e adicione o código abaixo para criar o formulário para inserir os novos produtos:
+4.3: Como o ProdutoController está retornando a view inserir.blade.php precisamos cria-la em 'resources\views\produto'. Edite o arquivo, crie a estrutura HTML básica, altere o lang e o title e adicione o código abaixo para criar o formulário para inserir os novos produtos:
 {% highlight html %}
     <div class="container">
         <h1 class="mt-2">Inserir produto</h1>
@@ -358,14 +358,14 @@ Como o ProdutoController está retornando a view inserir.blade.php precisamos cr
 <div class="alert-red">Não esqueça do <b>csrf_token()</b>.</div>
 Não esqueça do CSS no cabeçalho do arquivo `<link href="../../css/app.css" rel="stylesheet">`.
 
-Para testar abra o endereço http://127.0.0.1:8000/produtos/inserir no navegador.
+4.4: Para testar abra o endereço http://127.0.0.1:8000/produtos/inserir no navegador.
 
-O formulário envia os dados para a rota `/produtos/inserir` com o método post. Assim, precisamos criar está rota no arquivo de rotas localizado em `routes\web.php`:
+4.5: O formulário envia os dados para a rota `/produtos/inserir` com o método post. Assim, precisamos criar está rota no arquivo de rotas localizado em `routes\web.php`:
 {% highlight php %}
 Route::post('/produtos/inserir', 'ProdutoController@inserir');
 {% endhighlight %}
 
-E, finalmente, para inserir os dados vamos criar o método `inserir` do ProdutoController:
+4.6: E, finalmente, para inserir os dados vamos criar o método `inserir` do ProdutoController:
 {% highlight php %}
     public function inserir()
     {
@@ -390,7 +390,7 @@ E, finalmente, para inserir os dados vamos criar o método `inserir` do ProdutoC
 {% endhighlight %}
 
 
-Observe que para informamos ao usuário que o nosso produto foi inserido com sucesso vamos passar uma variável `mensagem` e alterar a nossa view `inserir.blade.php`, localizada em `resources\views\produto` para mostrar essa mensagem:
+4.7: Observe que para informamos ao usuário que o nosso produto foi inserido com sucesso vamos passar uma variável `mensagem` e alterar a nossa view `inserir.blade.php`, localizada em `resources\views\produto` para mostrar essa mensagem:
 {% highlight html %}
         <h1 class="mt-2">Inserir produto</h1>
         @if(!empty($mensagem))
@@ -399,9 +399,9 @@ Observe que para informamos ao usuário que o nosso produto foi inserido com suc
 {% endhighlight %}
 
 
-## Alterando dados dos produtos
+## Passo 5: Alterando dados dos produtos
 
-Os dados serão alterados ou excluídos a partir da página de pesquisa. Então, vamos alterar o nosso arquivo pesquisar.blade.php, disponível na pasta `resources\views\produto`:
+5.1: Os dados serão alterados ou excluídos a partir da página de pesquisa. Então, vamos alterar o nosso arquivo pesquisar.blade.php, disponível na pasta `resources\views\produto`:
 {% highlight html %}
         @if(count($produtos) == 0)
             <div class="alert alert-danger mt-2">Nenhum produto encontrado com essa descrição!</div>
@@ -431,16 +431,16 @@ Os dados serão alterados ou excluídos a partir da página de pesquisa. Então,
         @endif
 {% endhighlight %}
 
-Observe que adicionamos 2 novas colunas: uma para exclusão de dados e outra para alteração de dados.
+5.2: Observe que adicionamos 2 novas colunas: uma para exclusão de dados e outra para alteração de dados.
 
-Para testar abra o endereço http://127.0.0.1/produtos/pesquisar no navegador.
+5.3: Para testar abra o endereço http://127.0.0.1/produtos/pesquisar no navegador.
 
-Precisamos criar a rota, disponível em `routes\web.php` para mostrar o formulário:
+5.4: Precisamos criar a rota, disponível em `routes\web.php` para mostrar o formulário:
 {% highlight php %}
 Route::get('/produtos/alterar/{id}', 'ProdutoController@mostrar_alterar');
 {% endhighlight %}
 
-Bem como, criar o método `mostrar_alterar` dentro do ProdutoController, disponível em `app\Http\Controllers` para que a view produto.alterar seja chamada:
+5.5: Bem como, criar o método `mostrar_alterar` dentro do ProdutoController, disponível em `app\Http\Controllers` para que a view produto.alterar seja chamada:
 {% highlight php %}
     public function mostrar_alterar()
     {
@@ -448,7 +448,7 @@ Bem como, criar o método `mostrar_alterar` dentro do ProdutoController, dispon�
     }
 {% endhighlight %}
 
-E agora vamos criar a view `alterar.blade.php` dentro da pasta `resources\views\produto`:
+5.6: E agora vamos criar a view `alterar.blade.php` dentro da pasta `resources\views\produto`:
 {% highlight html %}
 <div class="container">
     <h1 class="mt-2">Alterar produto</h1>
@@ -482,7 +482,7 @@ E agora vamos criar a view `alterar.blade.php` dentro da pasta `resources\views\
 
 <div class="alert-yellow">Não esqueça de criar a estrutura básica do documento HTML, alterar o lang e o title e importar o CSS.</div>
 
-Vamos alterar o nosso método `mostrar_alterar` para que capture os dados e envie a view `alterar.blade.php`:
+5.7: Vamos alterar o nosso método `mostrar_alterar` para que capture os dados e envie a view `alterar.blade.php`:
 {% highlight php %}
     public function mostrar_alterar($id)
     {
@@ -494,7 +494,7 @@ Vamos alterar o nosso método `mostrar_alterar` para que capture os dados e envi
     }
 {% endhighlight %}
 
-E com os dados passados pelo controller vamos inseri-los no nosso formulário:
+5.8: E com os dados passados pelo controller vamos inseri-los no nosso formulário:
 {% highlight html %}
 <div class="container">
     <h1 class="mt-2">Alterar produto</h1>
@@ -526,12 +526,12 @@ E com os dados passados pelo controller vamos inseri-los no nosso formulário:
 </div>
 {% endhighlight %}
 
-Para finalizar devemos criar a rota `/produtos/alterar`, chamada pelo método post do formulário:
+5.9: Para finalizar devemos criar a rota `/produtos/alterar`, chamada pelo método post do formulário:
 {% highlight php %}
 Route::post('/produtos/alterar', 'ProdutoController@alterar');
 {% endhighlight %}
 
-E criar o método `alterar` no ProdutoController:
+5.10: E criar o método `alterar` no ProdutoController:
 {% highlight php %}
     public function alterar()
     {
@@ -551,7 +551,7 @@ E criar o método `alterar` no ProdutoController:
     }
 {% endhighlight %}
 
-Como nós estamos chamando a view pesquisar.blade.php, disponível em `resources\views\produto` e enviando uma variável vamos realizar a alteração:
+5.11: Como nós estamos chamando a view pesquisar.blade.php, disponível em `resources\views\produto` e enviando uma variável vamos realizar a alteração:
 {% highlight html %}
         <h1 class="mt-2">Pesquisa de produtos</h1>
         @if(!empty($mensagem))
@@ -560,14 +560,14 @@ Como nós estamos chamando a view pesquisar.blade.php, disponível em `resources
 {% endhighlight %}
 
 
-## Excluindo dados dos produtos
+## Passo 6: Excluindo dados dos produtos
 
-Na view pesquisar.blade.php nós já criamos o link para a rota para excluir um produto. Assim, devemos criar esta rota no arquivo `routes\web.php`:
+6.1: Na view pesquisar.blade.php nós já criamos o link para a rota para excluir um produto. Assim, devemos criar esta rota no arquivo `routes\web.php`:
 {% highlight php %}
 Route::get('/produtos/excluir/{id}', 'ProdutoController@excluir');
 {% endhighlight %}
 
-No nosso ProdutoController, disponível em 'app\Http\Controllers' vamos criar o método `excluir`:
+6.2: No nosso ProdutoController, disponível em 'app\Http\Controllers' vamos criar o método `excluir`:
 {% highlight php %}
     public function excluir($id)
     {
