@@ -254,11 +254,11 @@ Vamos alterar a nossa view `pesquisar.blade.php` para tratar os dados recebidos 
                 </tr>
                 @foreach ($produtos as $p)
                     <tr>
-                        <td>{{ $p->id }}</td>
-                        <td class="text-left">{{ $p->descricao }}</td>
-                        <td>{{ $p->quantidade }}</td>
-                        <td>{{ $p->valor }}</td>
-                        <td>{{ $p->data_vencimento }}</td>
+                        <td>{ { $p->id } }</td>
+                        <td class="text-left">{ { $p->descricao } }</td>
+                        <td>{ { $p->quantidade } }</td>
+                        <td>{ { $p->valor } }</td>
+                        <td>{ { $p->data_vencimento } }</td>
                     </tr>
                 @endforeach
             </table>
