@@ -273,7 +273,7 @@ Vamos criar um formulário, dentro da nossa view, para que possamos filtrar os r
     
 	<h1 class="mt-2">Pesquisa de produtos</h1>
         <form action="/produtos/pesquisar" method="post" class="form-inline mt-2">
-            <input type="hidden" name="_token" value="{{{ csrf_token() }}}">
+            <input type="hidden" name="_token" value="{ { { csrf_token() } } }">
             <div class="form-group">
                 <label for="descricao">Descrição: </label>
                 <input type="text" id="descricao" name="descricao" class="form-control ml-2">
