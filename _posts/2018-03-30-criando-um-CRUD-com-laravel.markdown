@@ -286,7 +286,7 @@ Vamos criar um formulário, dentro da nossa view, para que possamos filtrar os r
 <div class="alert-red">
 As seguintes observações são importantes:<br>
 1) A action deste formulário aponta para a rota /produtos/pesquisar com o método post que precisamos criar no arquivo de rota.<br>
-2) É necessário este campo oculto com name _token e o value=\{\{\{ csrf_token() }}}.
+2) É necessário este campo oculto com name _token e o value={ { { csrf_token() } } }.
 </div>
 
 Abra o arquivo `routes\web.php` e adicione a seguinte rota:
@@ -332,7 +332,7 @@ Como o ProdutoController está retornando a view inserir.blade.php precisamos cr
     <div class="container">
         <h1 class="mt-2">Inserir produto</h1>
         <form action="/produtos/inserir" method="post" class="mt-2">
-	    <input type="hidden" name="_token" value="{{{ csrf_token() }}}">
+	    <input type="hidden" name="_token" value="{ { { csrf_token() } } }">
             <div class="form-group">
                 <label for="descricao">Descrição: <span class="text-danger">*</span></label>
                 <input type="text" id="descricao" name="descricao" class="form-control" autofocus required>
@@ -453,7 +453,7 @@ E agora vamos criar a view `alterar.blade.php` dentro da pasta `resources\views\
 <div class="container">
     <h1 class="mt-2">Alterar produto</h1>
     <form action="/produtos/alterar" method="post" class="mt-2">
-        <input type="hidden" name="_token" value="{{{ csrf_token() }}}">
+        <input type="hidden" name="_token" value="{ { { csrf_token() } } }">
         <div class="form-group">
             <label for="id">ID: <span class="text-danger">*</span></label>
             <input type="text" id="id" name="id" class="form-control" autofocus required readonly>
@@ -499,7 +499,7 @@ E com os dados passados pelo controller vamos inseri-los no nosso formulário:
 <div class="container">
     <h1 class="mt-2">Alterar produto</h1>
     <form action="/produtos/alterar" method="post" class="mt-2">
-        <input type="hidden" name="_token" value="{{{ csrf_token() }}}">
+        <input type="hidden" name="_token" value="{ { { csrf_token() } } }">
         <div class="form-group">
             <label for="id">ID: <span class="text-danger">*</span></label>
             <input type="text" id="id" name="id" class="form-control" required readonly value="{{ $produto->id }}">
