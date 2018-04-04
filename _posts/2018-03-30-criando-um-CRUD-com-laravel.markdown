@@ -555,7 +555,7 @@ Route::post('/produtos/alterar', 'ProdutoController@alterar');
 {% highlight html %}
         <h1 class="mt-2">Pesquisa de produtos</h1>
         @if(!empty($mensagem))
-            <div class="alert alert-success mt-2">{{ $mensagem }}</div>
+            <div class="alert alert-success mt-2">{ { $mensagem } }</div>
         @endif
 {% endhighlight %}
 
