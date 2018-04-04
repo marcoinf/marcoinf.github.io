@@ -418,13 +418,13 @@ Route::post('/produtos/inserir', 'ProdutoController@inserir');
                 </tr>
                 @foreach ($produtos as $p)
                     <tr>
-                        <td>{{ $p->id }}</td>
-                        <td class="text-left">{{ $p->descricao }}</td>
-                        <td>{{ $p->quantidade }}</td>
-                        <td>{{ $p->valor }}</td>
-                        <td>{{ $p->data_vencimento }}</td>
-                        <td><a href="/produtos/excluir/{{ $p->id }}"><button class="btn btn-danger">Excluir</button></a></td>
-                        <td><a href="/produtos/alterar/{{ $p->id }}"><button class="btn btn-warning">Alterar</button></a></td>
+                        <td>{ { $p->id } }</td>
+                        <td class="text-left">{ { $p->descricao } }</td>
+                        <td>{ { $p->quantidade } }</td>
+                        <td>{ { $p->valor } }</td>
+                        <td>{ { $p->data_vencimento } }</td>
+                        <td><a href="/produtos/excluir/{ { $p->id } }"><button class="btn btn-danger">Excluir</button></a></td>
+                        <td><a href="/produtos/alterar/{ { $p->id } }"><button class="btn btn-warning">Alterar</button></a></td>
                     </tr>
                 @endforeach
             </table>
@@ -502,23 +502,23 @@ Route::get('/produtos/alterar/{id}', 'ProdutoController@mostrar_alterar');
         <input type="hidden" name="_token" value="{ { { csrf_token() } } }">
         <div class="form-group">
             <label for="id">ID: <span class="text-danger">*</span></label>
-            <input type="text" id="id" name="id" class="form-control" required readonly value="{{ $produto->id }}">
+            <input type="text" id="id" name="id" class="form-control" required readonly value="{ { $produto->id } }">
         </div>
         <div class="form-group">
             <label for="descricao">Descrição: <span class="text-danger">*</span></label>
-            <input type="text" id="descricao" name="descricao" class="form-control" autofocus required value="{{ $produto->descricao }}">
+            <input type="text" id="descricao" name="descricao" class="form-control" autofocus required value="{ { $produto->descricao } }">
         </div>
         <div class="form-group">
             <label for="quantidade">Quantidade: <span class="text-danger">*</span></label>
-            <input type="number" id="quantidade" name="quantidade" class="form-control" required value="{{ $produto->quantidade }}">
+            <input type="number" id="quantidade" name="quantidade" class="form-control" required value="{ { $produto->quantidade } }">
         </div>
         <div class="form-group">
             <label for="valor">Valor: <span class="text-danger">*</span></label>
-            <input type="number" id="valor" name="valor" class="form-control" required value="{{ $produto->valor }}">
+            <input type="number" id="valor" name="valor" class="form-control" required value="{ { $produto->valor } }">
         </div>
         <div class="form-group">
             <label for="data_vencimento">Data de vencimento: </label>
-            <input type="date" id="data_vencimento" name="data_vencimento" class="form-control" value="{{ $produto->data_vencimento }}">
+            <input type="date" id="data_vencimento" name="data_vencimento" class="form-control" value="{ { $produto->data_vencimento } }">
         </div>
         <div>Os campos marcados com <span class="text-danger">*</span> não podem estar em branco.</div>
         <input type="submit" class="btn btn-success mt-2" value="Alterar">
