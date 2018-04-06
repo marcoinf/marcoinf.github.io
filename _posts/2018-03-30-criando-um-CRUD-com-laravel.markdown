@@ -475,7 +475,7 @@ Route::get('/produtos/alterar/{id}', 'ProdutoController@mostrar_alterar');
             <input type="date" id="data_vencimento" name="data_vencimento" class="form-control">
         </div>
         <div>Os campos marcados com <span class="text-danger">*</span> não podem estar em branco.</div>
-        <input type="submit" class="btn btn-success mt-2" value="Inserir">
+        <input type="submit" class="btn btn-success mt-2" value="Alterar">
     </form>
 </div>
 {% endhighlight %}
