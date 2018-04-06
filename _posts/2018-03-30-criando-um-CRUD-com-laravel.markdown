@@ -433,7 +433,7 @@ Route::post('/produtos/inserir', 'ProdutoController@inserir');
 
 5.2: Observe que adicionamos 2 novas colunas: uma para exclusão de dados e outra para alteração de dados.
 
-5.3: Para testar abra o endereço http://127.0.0.1/produtos/pesquisar no navegador.
+5.3: Para testar abra o endereço http://127.0.0.1:8000/produtos/pesquisar no navegador.
 
 5.4: Precisamos criar a rota, disponível em `routes\web.php` para mostrar o formulário:
 {% highlight php %}
