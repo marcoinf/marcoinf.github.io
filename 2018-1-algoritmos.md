@@ -8,13 +8,14 @@ type: disciplinas
 * [Slide 1: variavéis, constantes, entrada e saída](https://marcoaugustoandrade.github.io/slides-algoritmos-1-variaveis-constantes-entrada-saida/)
 * [Slide 2: operadores](https://marcoaugustoandrade.github.io/slides-algoritmos-2-operadores/)
 * [Slide 3: estruturas de decisão](https://marcoaugustoandrade.github.io/slides-algoritmos-3-estruturas-de-decisao/)
+* [Slide 4: estruturas de repetição](https://marcoaugustoandrade.github.io/slides-algoritmos-4-lacos-de-repeticao/)
 
 ## Lista de exercícios
 * [Lista 1](https://github.com/marcoinf/marcoinf.github.io/raw/master/downloads/algoritmos/lista-1.pdf)
 * [Resolução dos exercícios da lista 1](https://github.com/marcoaugustoandrade/algoritmos-lista-1)
 * [Lista 2](https://github.com/marcoinf/marcoinf.github.io/raw/master/downloads/algoritmos/lista-2.pdf)
 * [Resolução dos exercícios da lista 2](https://github.com/marcoaugustoandrade/algoritmos-lista-2)
-* Lista 3
+* [Lista 3](https://github.com/marcoaugustoandrade/algoritmos-lista-3)
 * Resolução dos exercícios da lista 3
 * Lista 4
 * Resolução dos exercícios da lista 4
@@ -29,17 +30,17 @@ type: disciplinas
   - Conteúdo: Variáveis: tipos, definição e atribuição. Constantes. Operadores de atribuição, aritméticos, relacionais e lógicos. Estruturas de decisão.
   
 - **Prova 2**
-  - Data: **a definir**
+  - Data: **28/05/2018**
   - Valor: **25 pontos**
-  - Conteúdo: Conteúdo visto até o momento. Laços de repetição.
+  - Conteúdo: Conteúdo visto até o momento. Laços de repetição. Arranjos: vetores e matrizes.
   
 - **Prova 3**
-  - Data: **a definir**
+  - Data: **27/06/2018**
   - Valor: 3**0 pontos**
-  - Conteúdo: Conteúdo visto até o momento. Arranjos: vetores e matrizes. Funções e procedimentos. Recursividade.
+  - Conteúdo: Conteúdo visto até o momento. Funções e procedimentos. Recursividade.
   
 - **Trabalho prático**
-  - Data da entrega: **a definir**
+  - Data da entrega: **19/06/2018**
   - Valor: **20 pontos**
   - Descrição: a definir
 
