@@ -29,7 +29,7 @@ Aguarde o Gradle executar.
 
 2.4: Ancore nas bordas com margin de 8.
 
-2.5: Mude as propriedades `layout_width` e o `layout_height` para `match_constraint`.
+2.5: Mude as propriedades `layout_width` e o `layout_height` para `wrap_content`.
 
 2.6: Adicione o ID `lsv_listar_tarefas` ao ListView.
 
