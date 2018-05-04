@@ -300,7 +300,9 @@ public abstract class AppDatabase extends RoomDatabase {
     });
 {% endhighlight %}
 
-4.10: Observe que o `DatePickerDialog` está solicitando a implementação do método d, então, vamos criar esse método na classe:
+<div class="alert-danget">O método d será implementado no passo 4.10</div>
+
+4.10: Observe que o `DatePickerDialog` está solicitando a implementação do método d, então, vamos criar esse método na classe, ou seja, fora do método `onCreate`:
 {% highlight java %}
     DatePickerDialog.OnDateSetListener d = new DatePickerDialog.OnDateSetListener() {
         @Override
