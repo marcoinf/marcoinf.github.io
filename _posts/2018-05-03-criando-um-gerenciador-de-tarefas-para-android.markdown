@@ -226,7 +226,7 @@ public interface TarefaDAO {
 3.7: Em seguida, adicione a seguinte marcação na classe informado quais são as entidades a serem persistidas, bem como, qual a versão do banco de dados:
 {% highlight java %}
 @Database(entities = {Tarefa.class}, version = 1)
-public abstract class AppDatabase extends Room {
+public abstract class AppDatabase extends RoomDatabase {
 }
 {% endhighlight %}
 
