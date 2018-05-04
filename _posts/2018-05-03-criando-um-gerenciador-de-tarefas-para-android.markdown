@@ -300,7 +300,7 @@ public abstract class AppDatabase extends RoomDatabase {
     });
 {% endhighlight %}
 
-<div class="alert-danget">O método d será implementado no passo 4.10</div>
+<div class="alert-red">O método d será implementado no passo 4.10</div>
 
 4.10: Observe que o `DatePickerDialog` está solicitando a implementação do método d, então, vamos criar esse método na classe, ou seja, fora do método `onCreate`:
 {% highlight java %}
