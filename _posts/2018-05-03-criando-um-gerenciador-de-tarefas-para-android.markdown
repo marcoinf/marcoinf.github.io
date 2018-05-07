@@ -576,19 +576,19 @@ public abstract class AppDatabase extends RoomDatabase {
 
 ## Passo 6: Alterando os dados de uma tarefa
 
-6.1 Clique com o botão direito em app > New > Activity > Empty activity e nomeie como AlterarTarefaActivity
+6.1: Clique com o botão direito em app > New > Activity > Empty activity e nomeie como AlterarTarefaActivity
 
-6.2 Abra o arquivo activity_alterar_tarefa e adicione um TextInputLayout, dois TextView, um Switch, um Button, e realize as ancoragens.
+6.2: Abra o arquivo activity_alterar_tarefa e adicione um TextInputLayout, dois TextView, um Switch, um Button, e realize as ancoragens.
 
-6.3 Altere o ID do TextInputLayout para til_alterar_descricao. Clique no TextInputEditText interno e altere o hint para "Descrição:".
+6.3: Altere o ID do TextInputLayout para til_alterar_descricao. Clique no TextInputEditText interno e altere o hint para "Descrição:".
 
-6.4 Altere os IDs dos TextView para txt_alterar_data e txt_alterar_hora. Altere os text para "Selecionar data" e "Selecionar horário".
+6.4: Altere os IDs dos TextView para txt_alterar_data e txt_alterar_hora. Altere os text para "Selecionar data" e "Selecionar horário".
 
-6.5 Altere o ID do Switch para swt_realizado e o text para "Realizado".
+6.5: Altere o ID do Switch para swt_realizado e o text para "Realizado".
 
-6.6 Altere o ID do Button para btn_alterar e o text para "ALTERAR".
+6.6: Altere o ID do Button para btn_alterar e o text para "ALTERAR".
 
-6.7 Abra a classe AlterarTarefaAcitivy.java (app\br.edu.ifro.vilhena.ads) e declare os atributos:
+6.7: Abra a classe AlterarTarefaAcitivy.java (app\br.edu.ifro.vilhena.ads) e declare os atributos:
 {% highlight java %}
     private TextInputLayout tilAlterarDescricao;
     private TextView txtAlterarData;
@@ -599,7 +599,7 @@ public abstract class AppDatabase extends RoomDatabase {
     private Tarefa tarefa;
 {% endhighlight %}
 
-6.8 E no método `onCreate` vamos realizar a vinculação:
+6.8: E no método `onCreate` vamos realizar a vinculação:
 {% highlight java %}
     tilAlterarDescricao = (TextInputLayout) findViewById(R.id.til_alterar_descricao);
     txtAlterarData = (TextView) findViewById(R.id.txt_alterar_data);
@@ -608,7 +608,7 @@ public abstract class AppDatabase extends RoomDatabase {
     btnAlterar = (Button) findViewById(R.id.btn_alterar);
 {% endhighlight %}
 
-6.9 Vamos alterar a classe ListarTarefasActivity.java (app\br.edu.ifro.vilhena.ads) para que ao clicar em um item da nossa ListView a activity de alteração seja chamada. Assim, no método `onCreate` crie o setOnItemClickListener no lsvListarTarefas:
+6.9: Vamos alterar a classe ListarTarefasActivity.java (app\br.edu.ifro.vilhena.ads) para que ao clicar em um item da nossa ListView a activity de alteração seja chamada. Assim, no método `onCreate` crie o setOnItemClickListener no lsvListarTarefas:
 {% highlight java %}
     lsvListarTarefas.setOnItemClickListener(new AdapterView.OnItemClickListener() {
         @Override
@@ -620,7 +620,7 @@ public abstract class AppDatabase extends RoomDatabase {
     }); 
 {% endhighlight %}
 
-6.10 Voltando a AlterarTarefasActivity.java (app\br.edu.ifro.vilhena.ads), em seu método `onCreate` vamos popular o formulário com o id recebido:
+6.10: Voltando a AlterarTarefasActivity.java (app\br.edu.ifro.vilhena.ads), em seu método `onCreate` vamos popular o formulário com o id recebido:
 {% highlight java %}
     Intent intent = getIntent();
     Bundle args = intent.getExtras();
@@ -638,9 +638,9 @@ public abstract class AppDatabase extends RoomDatabase {
     swtRealizado.setChecked(tarefa.isRealizado());
 {% endhighlight %}
 
-6.11 Execute a aplicação e veja se, ao clicar em um dos itens da nossa ListView, a activity para alteração é executada e os dados inseridos no formulário.
+6.11: Execute a aplicação e veja se, ao clicar em um dos itens da nossa ListView, a activity para alteração é executada e os dados inseridos no formulário.
 
-6.12 Antes de persistir vamos implementar a funcionalidade das caixas de diálogo da data e da hora. Assim, dentro do método `onCreate` da activity AlterarTarefaActivity.java implemente:
+6.12: Antes de persistir vamos implementar a funcionalidade das caixas de diálogo da data e da hora. Assim, dentro do método `onCreate` da activity AlterarTarefaActivity.java implemente:
 {% highlight java %}
     txtAlterarData.setOnClickListener(new View.OnClickListener() {
         @Override
@@ -657,7 +657,7 @@ public abstract class AppDatabase extends RoomDatabase {
     });
 {% endhighlight %}     
 
-6.13 Implemente como métodos da classe:
+6.13: Implemente como métodos da classe:
 {% highlight java %}
     DatePickerDialog.OnDateSetListener d = new DatePickerDialog.OnDateSetListener() {
         @Override
@@ -681,9 +681,9 @@ public abstract class AppDatabase extends RoomDatabase {
     };
 {% endhighlight %}
 
-6.14 Teste a aplicação e veja se, ao clicar nos TextView, as caixas de diálogo do calendário e da hora são exibidas.
+6.14: Teste a aplicação e veja se, ao clicar nos TextView, as caixas de diálogo do calendário e da hora são exibidas.
 
-6.15 Em seguida, vamos implementar o método para salavar as alterações. No método `onCreate` crie o setOnClickListener do botão:
+6.15: Em seguida, vamos implementar o método para salavar as alterações. No método `onCreate` crie o setOnClickListener do botão:
 {% highlight java %}
     btnAlterar.setOnClickListener(new View.OnClickListener() {
         @Override
@@ -702,7 +702,7 @@ public abstract class AppDatabase extends RoomDatabase {
     });
 {% endhighlight %}
 
-6.16 Vamos implementar a mensagem no método onActivityResult da classe ListarTarefasActivity:
+6.16: Vamos implementar a mensagem no método onActivityResult da classe ListarTarefasActivity:
 {% highlight java %}
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
@@ -715,10 +715,113 @@ public abstract class AppDatabase extends RoomDatabase {
     }
 {% endhighlight %}
 
-6.17 Vamos modificar o nosso ListarTarefasAdapter.java (app\br.edu.ifro.vilhena.ads\adapter) para que, visualmente, as tarefas realizadas fiquem diferenciadas na ListView. Dentro do método getView adicione:
+6.17: Vamos modificar o nosso ListarTarefasAdapter.java (app\br.edu.ifro.vilhena.ads\adapter) para que, visualmente, as tarefas realizadas fiquem diferenciadas na ListView. Dentro do método getView adicione:
 {% highlight java %}
 	if (tarefa.isRealizado()){
         txtItemDescricao.setTextColor(Color.RED);
         txtItemDescricao.setPaintFlags(txtItemDescricao.getPaintFlags()| Paint.STRIKE_THRU_TEXT_FLAG);
     }
+{% endhighlight %}
+
+
+## Passo 7: Criando um menu de contexto para os itens da ListView
+
+7.1: Abra o ListarTarefasActivity.java (app\br.edu.ifro.vilhena.ads) e dentro do método `onCreate` crie o seguinte listener:
+{% highlight java %}
+    lsvListarTarefas.setOnCreateContextMenuListener(new View.OnCreateContextMenuListener() {
+    @Override
+    public void onCreateContextMenu(ContextMenu menu, View v, ContextMenu.ContextMenuInfo menuInfo) {
+        MenuItem compartilhar = menu.add("Compartilhar");
+        MenuItem deletar = menu.add("Deletar"); 
+    }});
+{% endhighlight %}
+
+7.2: Execute a aplicação e dê um clique longo e verifique se o menu de contexto é exibido.
+
+7.3: Para implementar a ação de excluir uma tarefa precisamos o item selecionado. Dentro do setOnCreateContextMenuListener da lsvListarTarefas adicione:
+{% highlight java %}
+    AdapterView.AdapterContextMenuInfo info = (AdapterView.AdapterContextMenuInfo) menuInfo;
+    final Tarefa tarefaSelecionada = (Tarefa) lsvListarTarefas.getAdapter().getItem(info.position);
+{% endhighlight %}
+
+7.4: Agora, vamos implementar a ação de excluir. Dentro do setOnCreateContextMenuListener da lsvListarTarefas adicione:
+{% highlight java %}
+    deletar.setOnMenuItemClickListener(new MenuItem.OnMenuItemClickListener() {
+        @Override
+        public boolean onMenuItemClick(MenuItem item) {
+            AppDatabase.getAppDatabase(ListarTarefasActivity.this).tarefaDAO().deletar(tarefaSelecionada);
+            atualizarLista();
+            return false;
+        }
+    });
+{% endhighlight %}
+
+7.5: Precisamos criar um método para atualizar a nossa ListView:
+{% highlight java %}
+    public void atualizarLista(){
+        tarefas = AppDatabase.getAppDatabase(this).tarefaDAO().listarTodos();
+        ListarTarefasAdapter adapter = new ListarTarefasAdapter(tarefas, this);
+        lsvListarTarefas.setAdapter(adapter);
+    }
+{% endhighlight %}
+
+7.6: Altere o método `onStart` para que o mesmo utilize o método para atualizar nossa ListView:
+{% highlight java %}
+    protected void onStart() {
+        super.onStart();
+        atualizarLista();
+    }
+{% endhighlight %}
+
+7.7: O `setOnCreateContextMenuListener` do `lsvListarTarefas` vai ficar assim:
+{% highlight java %}
+lsvListarTarefas.setOnCreateContextMenuListener(new View.OnCreateContextMenuListener() {
+    @Override
+    public void onCreateContextMenu(ContextMenu menu, View v, ContextMenu.ContextMenuInfo menuInfo) {
+
+        MenuItem compartilhar = menu.add("Compartilhar");
+        MenuItem deletar = menu.add("Deletar");
+
+        AdapterView.AdapterContextMenuInfo info = (AdapterView.AdapterContextMenuInfo) menuInfo;
+        final Tarefa tarefaSelecionada = (Tarefa) lsvListarTarefas.getAdapter().getItem(info.position);
+
+        deletar.setOnMenuItemClickListener(new MenuItem.OnMenuItemClickListener() {
+            @Override
+            public boolean onMenuItemClick(MenuItem item) {
+                AppDatabase.getAppDatabase(ListarTarefasActivity.this).tarefaDAO().deletar(tarefaSelecionada);
+                atualizarLista();
+                return false;
+            }
+        });
+
+    }});
+{% endhighlight %}
+
+7.8: Execute a aplicação e exclua alguma tarefa.
+
+7.9: Vamos colocar uma caixa de confirmação para exclusão. Modifique o deletar.setOnMenuItemClickListener da seguinte forma:
+{% highlight java %}
+    deletar.setOnMenuItemClickListener(new MenuItem.OnMenuItemClickListener() {
+        @Override
+        public boolean onMenuItemClick(MenuItem item) {
+            
+            AlertDialog a = new AlertDialog.Builder(ListarTarefasActivity.this)
+                    .setIcon(android.R.drawable.ic_dialog_alert)
+                    .setTitle("Deletar")
+                    .setMessage("Deseja realmente excluir?")
+                    .setPositiveButton("Sim",
+                            new DialogInterface.OnClickListener() {
+                                @Override
+                                public void onClick(DialogInterface dialogInterface, int i) {
+                                    AppDatabase.getAppDatabase(ListarTarefasActivity.this).tarefaDAO().deletar(tarefaSelecionada);
+                                    atualizarLista();
+                                    Snackbar.make(findViewById(R.id.layout_listar_tarefas), "Deletado com sucesso", Snackbar.LENGTH_LONG).show();
+                                }
+                            })
+                    .setNegativeButton("Não", null)
+                    .show();
+
+            return false;
+        }
+    });
 {% endhighlight %}
