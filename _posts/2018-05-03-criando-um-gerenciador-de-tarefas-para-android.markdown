@@ -572,3 +572,153 @@ public abstract class AppDatabase extends RoomDatabase {
     <activity android:name=".CadastrarTarefaActivity"
               android:parentActivityName=".ListarTarefasActivity"></activity>
 {% endhighlight %}
+
+
+## Passo 6: Alterando os dados de uma tarefa
+
+6.1 Clique com o botão direito em app > New > Activity > Empty activity e nomeie como AlterarTarefaActivity
+
+6.2 Abra o arquivo activity_alterar_tarefa e adicione um TextInputLayout, dois TextView, um Switch, um Button, e realize as ancoragens.
+
+6.3 Altere o ID do TextInputLayout para til_alterar_descricao. Clique no TextInputEditText interno e altere o hint para "Descrição:".
+
+6.4 Altere os IDs dos TextView para txt_alterar_data e txt_alterar_hora. Altere os text para "Selecionar data" e "Selecionar horário".
+
+6.5 Altere o ID do Switch para swt_realizado e o text para "Realizado".
+
+6.6 Altere o ID do Button para btn_alterar e o text para "ALTERAR".
+
+6.7 Abra a classe AlterarTarefaAcitivy.java (app\br.edu.ifro.vilhena.ads) e declare os atributos:
+{% highlight java %}
+    private TextInputLayout tilAlterarDescricao;
+    private TextView txtAlterarData;
+    private TextView txtAlterarHora;
+    private Switch swtRealizado;
+    private Button btnAlterar;
+    private Calendar dataHora = Calendar.getInstance();
+    private Tarefa tarefa;
+{% endhighlight %}
+
+6.8 E no método `onCreate` vamos realizar a vinculação:
+{% highlight java %}
+    tilAlterarDescricao = (TextInputLayout) findViewById(R.id.til_alterar_descricao);
+    txtAlterarData = (TextView) findViewById(R.id.txt_alterar_data);
+    txtAlterarHora = (TextView) findViewById(R.id.txt_alterar_hora);
+    swtRealizado = (Switch) findViewById(R.id.swt_realizado);
+    btnAlterar = (Button) findViewById(R.id.btn_alterar);
+{% endhighlight %}
+
+6.9 Vamos alterar a classe ListarTarefasActivity.java (app\br.edu.ifro.vilhena.ads) para que ao clicar em um item da nossa ListView a activity de alteração seja chamada. Assim, no método `onCreate` crie o setOnItemClickListener no lsvListarTarefas:
+{% highlight java %}
+    lsvListarTarefas.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+        @Override
+        public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+            Intent intent = new Intent(ListarTarefasActivity.this, AlterarTarefaActivity.class);
+            intent.putExtra("id_tarefa", tarefas.get(position).getId());
+            startActivityForResult(intent, 2);
+        }
+    }); 
+{% endhighlight %}
+
+6.10 Voltando a AlterarTarefasActivity.java (app\br.edu.ifro.vilhena.ads), em seu método `onCreate` vamos popular o formulário com o id recebido:
+{% highlight java %}
+    Intent intent = getIntent();
+    Bundle args = intent.getExtras();
+    int id = args.getInt("id_tarefa");
+    tarefa = AppDatabase.getAppDatabase(this).tarefaDAO().listarUm(id);
+
+    tilAlterarDescricao.getEditText().setText(tarefa.getDescricao());
+
+    SimpleDateFormat formatarData = new SimpleDateFormat("dd/MM/yyyy");
+    txtAlterarData.setText(formatarData.format(tarefa.getDataHora()));
+
+    SimpleDateFormat formatarHora = new SimpleDateFormat("HH:mm");
+    txtAlterarHora.setText(formatarHora.format(tarefa.getDataHora()));
+
+    swtRealizado.setChecked(tarefa.isRealizado());
+{% endhighlight %}
+
+6.11 Execute a aplicação e veja se, ao clicar em um dos itens da nossa ListView, a activity para alteração é executada e os dados inseridos no formulário.
+
+6.12 Antes de persistir vamos implementar a funcionalidade das caixas de diálogo da data e da hora. Assim, dentro do método `onCreate` da activity AlterarTarefaActivity.java implemente:
+{% highlight java %}
+    txtAlterarData.setOnClickListener(new View.OnClickListener() {
+        @Override
+        public void onClick(View v) {
+            new DatePickerDialog(AlterarTarefaActivity.this, d, dataHora.get(Calendar.YEAR), dataHora.get(Calendar.MONTH), dataHora.get(Calendar.DAY_OF_MONTH)).show();
+        }
+    });
+
+    txtAlterarHora.setOnClickListener(new View.OnClickListener() {
+        @Override
+        public void onClick(View v) {
+            new TimePickerDialog(AlterarTarefaActivity.this, t, dataHora.get(Calendar.HOUR), dataHora.get(Calendar.MINUTE), true).show();
+        }
+    });
+{% endhighlight %}     
+
+6.13 Implemente como métodos da classe:
+{% highlight java %}
+    DatePickerDialog.OnDateSetListener d = new DatePickerDialog.OnDateSetListener() {
+        @Override
+        public void onDateSet(DatePicker view, int year, int month, int dayOfMonth) {
+            dataHora.set(Calendar.YEAR, year);
+            dataHora.set(Calendar.MONTH, month);
+            dataHora.set(Calendar.DAY_OF_MONTH, dayOfMonth);
+            SimpleDateFormat formatacao = new SimpleDateFormat("dd/MM/yyyy");
+            txtAlterarData.setText(formatacao.format(dataHora.getTime()));
+        }
+    };
+
+    TimePickerDialog.OnTimeSetListener t = new TimePickerDialog.OnTimeSetListener() {
+        @Override
+        public void onTimeSet(TimePicker view, int hourOfDay, int minute) {
+            dataHora.set(Calendar.HOUR, hourOfDay);
+            dataHora.set(Calendar.MINUTE, minute);
+            SimpleDateFormat formatacao = new SimpleDateFormat("HH:mm");
+            txtAlterarHora.setText(formatacao.format(dataHora.getTime()));
+        }
+    };
+{% endhighlight %}
+
+6.14 Teste a aplicação e veja se, ao clicar nos TextView, as caixas de diálogo do calendário e da hora são exibidas.
+
+6.15 Em seguida, vamos implementar o método para salavar as alterações. No método `onCreate` crie o setOnClickListener do botão:
+{% highlight java %}
+    btnAlterar.setOnClickListener(new View.OnClickListener() {
+        @Override
+        public void onClick(View v) {
+            tarefa.setDescricao(tilAlterarDescricao.getEditText().getText().toString().trim());
+            tarefa.setDataHora(dataHora.getTimeInMillis());
+            tarefa.setRealizado(swtRealizado.isChecked());
+            
+            AppDatabase.getAppDatabase(AlterarTarefaActivity.this).tarefaDAO().alterar(tarefa);
+
+            Intent intent = new Intent();
+            intent.putExtra("resposta", "OK");
+            setResult(RESULT_OK, intent);
+            finish();
+        }
+    });
+{% endhighlight %}
+
+6.16 Vamos implementar a mensagem no método onActivityResult da classe ListarTarefasActivity:
+{% highlight java %}
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if (resultCode == RESULT_OK && requestCode == 1){
+            Snackbar.make(findViewById(R.id.layout_listar_tarefas), "Tarefa cadastrada com sucesso!", Snackbar.LENGTH_LONG).show();
+        } else if (resultCode == RESULT_OK && requestCode == 2){
+            Snackbar.make(findViewById(R.id.layout_listar_tarefas), "Tarefa alterada com sucesso!", Snackbar.LENGTH_LONG).show();
+        }
+    }
+{% endhighlight %}
+
+6.17 Vamos modificar o nosso ListarTarefasAdapter.java (app\br.edu.ifro.vilhena.ads\adapter) para que, visualmente, as tarefas realizadas fiquem diferenciadas na ListView. Dentro do método getView adicione:
+{% highlight java %}
+	if (tarefa.isRealizado()){
+        txtItemDescricao.setTextColor(Color.RED);
+        txtItemDescricao.setPaintFlags(txtItemDescricao.getPaintFlags()| Paint.STRIKE_THRU_TEXT_FLAG);
+    }
+{% endhighlight %}
