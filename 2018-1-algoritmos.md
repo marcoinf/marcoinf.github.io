@@ -30,7 +30,7 @@ type: disciplinas
   - Conteúdo: Variáveis: tipos, definição e atribuição. Constantes. Operadores de atribuição, aritméticos, relacionais e lógicos. Estruturas de decisão.
   
 - **Prova 2**
-  - Data: **28/05/2018**
+  - Data: **29/05/2018**
   - Valor: **25 pontos**
   - Conteúdo: Conteúdo visto até o momento. Laços de repetição. Arranjos: vetores e matrizes.
   
