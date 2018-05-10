@@ -16,7 +16,7 @@ type: disciplinas
 * [Lista 2](https://github.com/marcoinf/marcoinf.github.io/raw/master/downloads/algoritmos/lista-2.pdf)
 * [Resolução dos exercícios da lista 2](https://github.com/marcoaugustoandrade/algoritmos-lista-2)
 * [Lista 3](https://github.com/marcoinf/marcoinf.github.io/raw/master/downloads/algoritmos/lista-3.pdf)
-* Resolução dos exercícios da lista 3
+* [Resolução dos exercícios da lista 3](https://github.com/marcoaugustoandrade/algoritmos-lista-3)
 * Lista 4
 * Resolução dos exercícios da lista 4
 * Lista 5
