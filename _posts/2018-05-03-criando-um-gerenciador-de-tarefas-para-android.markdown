@@ -545,7 +545,7 @@ public abstract class AppDatabase extends RoomDatabase {
 {% highlight java %}
 @Override
     public View getView(int position, View convertView, ViewGroup parent) {
-        View view = activity.getLayoutInflater().inflate(R.layout.adapter_listar_tarefa, parent, false);
+        View view = activity.getLayoutInflater().inflate(R.layout.adapter_listar_tarefas, parent, false);
         Tarefa tarefa = tarefas.get(position);
         TextView txtItemDescricao = (TextView) view.findViewById(R.id.txt_item_descricao);
         TextView txtItemDataHora = (TextView) view.findViewById(R.id.txt_item_data_hora);
