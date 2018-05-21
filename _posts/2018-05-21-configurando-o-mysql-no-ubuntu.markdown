@@ -20,7 +20,7 @@ sudo mysql
 CREATE USER 'suporte'@'localhost' IDENTIFIED BY 'password';
 {% endhighlight %}
 
-## Passo 4: Atribuit permissões para o usuário
+## Passo 4: Atribuindo permissões para o usuário
 {% highlight sql %}
 GRANT ALL PRIVILEGES ON * . * TO 'suporte'@'localhost';
 FLUSH PRIVILEGES;
