@@ -10,7 +10,7 @@ type: disciplinas
 * [Slide 3: estruturas de decisão](https://marcoaugustoandrade.github.io/slides-algoritmos/3-estrututas-de-decisao.html)
 * [Slide 4: estruturas de repetição](https://marcoaugustoandrade.github.io/slides-algoritmos/4-lacos-de-repeticao.html)
 * [Slide 5: arranjos: vetores e matrizes](https://marcoaugustoandrade.github.io/slides-algoritmos/5-arranjos.html)
-* [Slide 6: modularização: procedimentos e funçes](https://marcoaugustoandrade.github.io/slides-algoritmos/6-modularizacao.html)
+* [Slide 6: modularização: procedimentos e funções](https://marcoaugustoandrade.github.io/slides-algoritmos/6-modularizacao.html)
 
 ## Lista de exercícios
 * [Lista 1](https://github.com/marcoinf/marcoinf.github.io/raw/master/downloads/algoritmos/lista-1.pdf)
