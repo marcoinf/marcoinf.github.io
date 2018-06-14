@@ -37,7 +37,7 @@ type: disciplinas
   - Conteúdo: Conteúdo visto até o momento. Laços de repetição. Arranjos: vetores e matrizes.
   
 - **Prova 3**
-  - Data: **27/06/2018**
+  - Data: **26/06/2018**
   - Valor: 3**0 pontos**
   - Conteúdo: Conteúdo visto até o momento. Funções e procedimentos. Recursividade.
   
