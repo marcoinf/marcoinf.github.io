@@ -11,3 +11,4 @@ type: disciplinas
 ## Lista de exercícios
 * [Lista 1](https://github.com/marcoinf/marcoinf.github.io/raw/master/downloads/lista-1.pdf)
 * [Lista 2](https://github.com/marcoinf/marcoinf.github.io/raw/master/downloads/lista-2.pdf)
+* [Lista 3](https://github.com/marcoinf/marcoinf.github.io/raw/master/downloads/lista-3.pdf)
