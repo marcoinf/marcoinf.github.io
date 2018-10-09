@@ -35,25 +35,25 @@ npm install --save-dev gulp-sass
 Crie a seguinte estrutura no seu projeto:
 {% highlight bash %}
 dist
-	assets
-		css
-			estilo.css
-	index.html
+  assets
+    css
+      estilo.css
+    index.html
 src
-	assets
-		css
-			estilo.scss
-			base
-				normalize.scss
-			helpers			
-				variaveis.scss
-				mixins.scss
-				placeholder
-			layout
-				cabecalho.scss
-				geral.scss
-				corpo.scss
-				rodape.scss
+  assets
+    css
+      estilo.scss
+      base
+        normalize.scss
+      helpers			
+        variaveis.scss
+        mixins.scss
+        placeholder
+      layout
+        cabecalho.scss
+        geral.scss
+        corpo.scss
+        rodape.scss
 .gitignore
 gulpfile.js
 {% endhighlight %}
@@ -384,12 +384,16 @@ O SASS também têm funções bem interessantes para trabalharmos com cores:
 {% highlight sass %}
 // Deixar a cor 15% mais clara
 lighten($cor-principal, 15%);
+
 // Deixar a cor 15% mais escura
 darken($cor-principal, 15%);
+
 // Escala de cinza
 grayscale($cor-principal);
+
 // Cor inversa
 invert($cor-principal);
+
 // Cor complementar
 complement($cor-principal);
 {% endhighlight %}
