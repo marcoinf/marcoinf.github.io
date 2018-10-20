@@ -7,7 +7,7 @@ categories: css sass
 
 
 ## O que é SASS?
-O SASS é um pré-processador de CSS, extendendo a linguagem e disponibilizando funcionalidades como variáveis, mixins, funções. [SASS](https://sass-lang.com/) é CSS com superpoderes.
+O SASS é um pré-processador de CSS, estendendo a linguagem e disponibilizando funcionalidades como variáveis, mixins, funções. [SASS](https://sass-lang.com/) é CSS com superpoderes.
 
 ## Instalando o SASS
 Crie uma pasta para armazenar o projeto e acesse-a:
@@ -57,8 +57,6 @@ src
 .gitignore
 gulpfile.js
 {% endhighlight %}
-
-A pasta src contém ....
 
 Crie o arquivo `gulp-file.js`, que será responsável por transpilar o código escrito em SASS para CSS, e deixe o código da seguinte forma:
 {% highlight javascript %}
