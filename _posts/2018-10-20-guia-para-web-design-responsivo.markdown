@@ -12,13 +12,13 @@ O objetivo no uso de um web design responsivo é adaptar o site aos diferentes t
 O layout fluído é a principal técnica do design responsivo, onde utilizamos medidas flexíveis, como porcentagem, no lugar de px.
 
 {% highlight html %}
-&#60;header class="cabecalho"&#62;
+<header class="cabecalho">
   Trabalhando com responsividade
-&#60;/header&#62;
-&#60;main class="conteudo"&#62;
-  &#60;section class="col1"&#62;Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae unde reprehenderit aliquid veniam minus, consequatur ipsam explicabo architecto dolor maiores magnam voluptatem aliquam ullam laudantium mollitia saepe magni ea autem?&#60;/section&#62;
-  &#60;section class="col2"&#62;Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse a odit rerum autem repellendus dicta rem ipsum ratione deserunt numquam! Consectetur possimus consequatur ullam ut itaque saepe quis quasi minus.&#60;/section&#62;
-&#60;/main&#62;
+</header>
+<main class="conteudo">
+  <section class="col1">Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae unde reprehenderit aliquid veniam minus, consequatur ipsam explicabo architecto dolor maiores magnam voluptatem aliquam ullam laudantium mollitia saepe magni ea autem?</section>
+  <section class="col2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse a odit rerum autem repellendus dicta rem ipsum ratione deserunt numquam! Consectetur possimus consequatur ullam ut itaque saepe quis quasi minus.</section>
+</main>
 {% endhighlight %}
 
 Um exemplo utilizando larguras fixas:
@@ -62,16 +62,16 @@ O mesmo exemplo utilizando larguras flexíveis:
 Também podemos utilizar % para definir o tamanho das fontes. Os valores são herdados hierarquicamente do elemento pai body.
 
 {% highlight html %}
-&#60;body&#62;
-&#60;main class="conteudo"&#62;
-  &#60;h1 class="titulo"&#62;Lorem ipsum dolor&#60;/h1&#62;
-  &#60;p class="texto-principal"&#62;Lorem ipsum dolor, sit amet consectetur adipisicing elit. Totam voluptate sunt, hic, illo eos similique ab, praesentium doloremque quam inventore modi veritatis error. Eveniet quam odit ullam eaque voluptates. Deserunt!&#60;/p&#62;
-  &#60;section class="secao-comentarios"&#62;
-    &#60;p class="texto-comentario"&#62;Lorem ipsum dolor sit amet consectetur adipisicing elit.&#60;/p&#62;
-    &#60;p class="texto-comentario"&#62;Lorem ipsum dolor sit amet consectetur adipisicing elit.&#60;/p&#62;
-  &#60;/section&#62;
-&#60;/main&#62;
-&#60;/body
+<body>
+<main class="conteudo">
+  <h1 class="titulo">Lorem ipsum dolor</h1>
+  <p class="texto-principal">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Totam voluptate sunt, hic, illo eos similique ab, praesentium doloremque quam inventore modi veritatis error. Eveniet quam odit ullam eaque voluptates. Deserunt!</p>
+  <section class="secao-comentarios">
+    <p class="texto-comentario">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+    <p class="texto-comentario">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+  </section>
+</main>
+</body
 {% endhighlight %}
 
 {% highlight css %}
@@ -133,10 +133,10 @@ Nesse exemplo, estamos dizendo que as colunas ocupam 50% do espaço, mas conform
 
 Para que imagens possam ser fluídas, diminuindo e aumentando conforme o tamanho da tela, podemos definir que o tamanho máximo dela será	de no máximo 100%:
 {% highlight html %}
-&#60;div class="conteudo"&#62;
-  &#60;img src="imagens/imagem.jpg" class="imagem"&#62;
-  &#60;p&#62;Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione praesentium similique, delectus saepe odit ipsum eaque quos dolores accusantium porro autem iure quibusdam quas in. Esse suscipit commodi dignissimos veritatis? &#60;/p&#62;
-&#60;/div&#62;
+<div class="conteudo">
+  <img src="imagens/imagem.jpg" class="imagem">
+  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione praesentium similique, delectus saepe odit ipsum eaque quos dolores accusantium porro autem iure quibusdam quas in. Esse suscipit commodi dignissimos veritatis? </p>
+</div>
 {% endhighlight %}
 
 {% highlight css %}
@@ -151,7 +151,7 @@ Para que os media queries, que veremos a seguir, funcionem corretamente e detect
 
 Assim, basta declarar o viewport no head da página:
 {% highlight html %}
-&#60;meta name="viewport" charset="width=device-width"&#62;
+<meta name="viewport" charset="width=device-width">
 {% endhighlight %}
 
 [Leia esse artigo da MDN](https://developer.mozilla.org/pt-BR/docs/Mozilla/Mobile/Viewport_meta_tag)
@@ -161,8 +161,8 @@ Assim, basta declarar o viewport no head da página:
 Imagine a seguinte situação: quando o usuário estiver navegando em uma tela grande, como por exemplo, seu notebook ou desktop, o título e sub-título do site deve estar alinhado a esquerda. Entretanto, quando estiver navegando em uma tela menor, como um tablet, o título e sub-título devem estar alinhados ao centro.
 
 {% highlight css %}
-&#60;h1 class="titulo"&#62;Lorem ipsum dolor&#60;/h1&#62;
-&#60;h2 class="subtitulo"&#62;Sit amet consectetur adipisicing elit&#60;/h2&#62;
+<h1 class="titulo">Lorem ipsum dolor</h1>
+<h2 class="subtitulo">Sit amet consectetur adipisicing elit</h2>
 {% endhighlight %}
 
 Para a primeira situação vamos declarar nosso CSS:
@@ -195,27 +195,27 @@ A primeira opção ao desenvolver pensando em um design responsivo é ter uma im
 
 Veja o código a seguir:
 {% highlight html %}
-&#60;picture&#62;
-  &#60;source media="(min-width: 768px)" src="imagens/grande/imagem.jpg" alt="Lorem ipsum dolor sit"&#62;
-  &#60;source media="(min-width: 1000px)" src="imagems/enorme/imagem.jpg" alt="Lorem ipsum dolor sit"&#62;
-  &#60;source media="" src="imagens/imagem.jpg" alt="Lorem ipsum dolor sit"&#62;
-  &#60;img src="imagens/imagem.jpg"&#62;
-&#60;/picture&#62;
+<picture>
+  <source media="(min-width: 768px)" src="imagens/grande/imagem.jpg" alt="Lorem ipsum dolor sit">
+  <source media="(min-width: 1000px)" src="imagems/enorme/imagem.jpg" alt="Lorem ipsum dolor sit">
+  <source media="" src="imagens/imagem.jpg" alt="Lorem ipsum dolor sit">
+  <img src="imagens/imagem.jpg">
+</picture>
 {% endhighlight %}
 
 A tag `img` é passada como fallback, assim, caso o navegador não suporte a tag `picture` a imagem será carregada a partir de `imagens/imagem.jpg`.
 
 O código a seguir é mais completo, pois envelopa o `picture` em um elemento `figure`:
 {% highlight html %}
-&#60;figure&#62;
-  &#60;picture&#62;
-    &#60;source media="(min-width: 768px)" src="imagens/grande/imagem.jpg"&#62;
-    &#60;source media="(min-width: 1000px)" src="imagems/enorme/imagem.jpg"&#62;
-    &#60;source media="" src="imagens/imagem.jpg"&#62;
-    &#60;img src="imagens/imagem.jpg"&#62;
-  &#60;/picture&#62;
-  &#60;figcaption&#62;Lorem ipsum dolor sit&#60;/figcaption&#62;
-&#60;/figure&#62;
+<figure>
+  <picture>
+    <source media="(min-width: 768px)" src="imagens/grande/imagem.jpg">
+    <source media="(min-width: 1000px)" src="imagems/enorme/imagem.jpg">
+    <source media="" src="imagens/imagem.jpg">
+    <img src="imagens/imagem.jpg">
+  </picture>
+  <figcaption>Lorem ipsum dolor sit</figcaption>
+</figure>
 {% endhighlight %}
 
 Mas qual o problema na utlização dessa técnica? Você terá a preocupação de gerar várias versões da imagem, mesmo que de forma automatizada, para várias resoluções de tela.
@@ -228,18 +228,18 @@ Uma outra aplicação do web design responsivo é ter um menu diferente para uma
 
 Declaramos o menu em nosso HTML:
 {% highlight html %}
-&#60;header&#62;
-  &#60;span class="mostrar-menu"&#62;
-    &#60;a href="#" onclick="mostrarMenu()"&#62;Menu&#60;/a&#62;
-  &#60;/span&#62;
-  &#60;nav class="menu"&#62;
-    &#60;ul class="menu-items"&#62;
-      &#60;li&#62;&#60;a href="#" class="menu-item"&#62;Início&#60;/a&#62;&#60;/li&#62;
-      &#60;li&#62;&#60;a href="#" class="menu-item"&#62;Sobre&#60;/a&#62;&#60;/li&#62;
-      &#60;li&#62;&#60;a href="#" class="menu-item"&#62;Contato&#60;/a&#62;&#60;/li&#62;
-    &#60;/ul&#62;
-  &#60;/nav&#62;
-&#60;/header&#62;
+<header>
+  <span class="mostrar-menu">
+    <a href="#" onclick="mostrarMenu()">Menu</a>
+  </span>
+  <nav class="menu">
+    <ul class="menu-items">
+      <li><a href="#" class="menu-item">Início</a></li>
+      <li><a href="#" class="menu-item">Sobre</a></li>
+      <li><a href="#" class="menu-item">Contato</a></li>
+    </ul>
+  </nav>
+</header>
 {% endhighlight %}
 
 Neste exemplo, vamos definir que o comportamento padrão do menu é o de telas menores, ou seja, mostrar apenas a palavra `menu` e não exibir o menu. Quando desenvolve-se um projeto pensando em telas menores primeiro dizemos que o desenvolvimento é Mobile First.
@@ -271,7 +271,7 @@ Estilização padrão de um menu para tela menores utilizando CSS:
 
 Obviamente o menu não será exibido e para que isso possa ser possível precisamos de uma ação implementada com JavaScript:
 {% highlight javascript %}
-&#60;script&#62;
+<script>
   let menuAtivo = false;
   function mostrarMenu(){
     if (menuAtivo){
@@ -282,7 +282,7 @@ Obviamente o menu não será exibido e para que isso possa ser possível precisa
       menuAtivo = true;
     }
   }
-&#60;/script&#62;
+</script>
 {% endhighlight %}
 
 Agora que já implementamos estilização e comportamento para um menu direcionando a telas menores, vamos estilizar quando visualiza-do em telas maiores:
