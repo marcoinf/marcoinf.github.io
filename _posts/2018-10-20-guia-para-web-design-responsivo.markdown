@@ -40,6 +40,7 @@ Um exemplo utilizando larguras fixas:
 Agora redimensione a tela e veja que com uma tela menor o conteúdo não fica proporcionalmente distribuído, aparecendo uma barra de rolagem.
 
 O mesmo exemplo utilizando larguras flexíveis:
+{% highlight css %}
 .cabecalho{
   background: blueviolet;
   width: 100%px;
@@ -285,6 +286,7 @@ Obviamente o menu não será exibido e para que isso possa ser possível precisa
 {% endhighlight %}
 
 Agora que já implementamos estilização e comportamento para um menu direcionando a telas menores, vamos estilizar quando visualiza-do em telas maiores:
+{% highlight css %}
 @media(min-width: 768px){
   .mostrar-menu{
     display: none;
