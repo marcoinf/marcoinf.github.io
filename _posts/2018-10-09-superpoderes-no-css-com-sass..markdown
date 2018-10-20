@@ -392,7 +392,7 @@ darken($cor-principal, 15%);
 grayscale($cor-principal);
 
 // Cor inversa
-invert($cor-principal);
+invert($cor-principal); 
 
 // Cor complementar
 complement($cor-principal);
