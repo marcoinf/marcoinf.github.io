@@ -16,8 +16,14 @@ O layout fluído é a principal técnica do design responsivo, onde utilizamos m
   Trabalhando com responsividade
 </header>
 <main class="conteudo">
-  <section class="col1">Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae unde reprehenderit aliquid veniam minus, consequatur ipsam explicabo architecto dolor maiores magnam voluptatem aliquam ullam laudantium mollitia saepe magni ea autem?</section>
-  <section class="col2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse a odit rerum autem repellendus dicta rem ipsum ratione deserunt numquam! Consectetur possimus consequatur ullam ut itaque saepe quis quasi minus.</section>
+  <section class="col1">Lorem ipsum dolor sit amet consectetur adipisicing elit.
+    Vitae unde reprehenderit aliquid veniam minus, consequatur ipsam explicabo architecto dolor maiores 
+    magnam voluptatem aliquam ullam laudantium mollitia saepe magni ea autem?
+  </section>
+  <section class="col2">Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+    Esse a odit rerum autem repellendus dicta rem ipsum ratione deserunt numquam!
+    Consectetur possimus consequatur ullam ut itaque saepe quis quasi minus.
+  </section>
 </main>
 {% endhighlight %}
 
