@@ -71,13 +71,16 @@ Também podemos utilizar % para definir o tamanho das fontes. Os valores são he
 <body>
 <main class="conteudo">
   <h1 class="titulo">Lorem ipsum dolor</h1>
-  <p class="texto-principal">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Totam voluptate sunt, hic, illo eos similique ab, praesentium doloremque quam inventore modi veritatis error. Eveniet quam odit ullam eaque voluptates. Deserunt!</p>
+  <p class="texto-principal">Lorem ipsum dolor, sit amet consectetur adipisicing elit. 
+    Totam voluptate sunt, hic, illo eos similique ab, praesentium doloremque quam inventore
+     modi veritatis error. Eveniet quam odit ullam eaque voluptates. Deserunt!
+  </p>
   <section class="secao-comentarios">
     <p class="texto-comentario">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
     <p class="texto-comentario">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
   </section>
 </main>
-</body
+</body>
 {% endhighlight %}
 
 {% highlight css %}
@@ -141,7 +144,10 @@ Para que imagens possam ser fluídas, diminuindo e aumentando conforme o tamanho
 {% highlight html %}
 <div class="conteudo">
   <img src="imagens/imagem.jpg" class="imagem">
-  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione praesentium similique, delectus saepe odit ipsum eaque quos dolores accusantium porro autem iure quibusdam quas in. Esse suscipit commodi dignissimos veritatis? </p>
+  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione praesentium 
+    similique, delectus saepe odit ipsum eaque quos dolores accusantium porro autem 
+    iure quibusdam quas in. Esse suscipit commodi dignissimos veritatis?
+  </p>
 </div>
 {% endhighlight %}
 
