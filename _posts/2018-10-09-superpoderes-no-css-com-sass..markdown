@@ -6,7 +6,7 @@ categories: css sass
 ---
 
 
-## O que é SASS?
+## O que é SASS??
 O SASS é um pré-processador de CSS, extendendo a linguagem e disponibilizando funcionalidades como variáveis, mixins, funções. [SASS](https://sass-lang.com/) é CSS com superpoderes.
 
 ## Instalando o SASS
