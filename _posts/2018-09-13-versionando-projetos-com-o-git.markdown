@@ -35,7 +35,7 @@ Há 3 locais dentro do seu repositório nomeados da seguinte forma:
 ## Verificando o status do repositório
 Sempre é possível, e necessário, verificar o status do repositório com o seguinte comando:
 {% highlight bash %}
-git status
+git status 
 {% endhighlight %}
 
 
