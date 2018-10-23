@@ -1,131 +1,144 @@
 ---
 layout: post
 title: "Trabalhando com branchs"
-date:   2018-23-13 15:06:00 -0400
+date:   2018-10-23 15:10:00 -0400
 categories: git
 ---
 
-## Criando um novo branch
-Ao desenvolver uma nova funcionalidade da aplicação é comum que crie-se uma nova ramificação (branch), implementar e testar, para somente ao final mesclar (merge) como o código que está na branch master, evitando-se assim, que as alterações na branch criada quebrem a branch master. A branch é criada com uma cópia de tudo que está armazenado na branch master.
-Para criar uma branch utilize o comando:
+## Configurando o Git
+Antes de iniciar o uso do Git faça as seguintes configurações:
 {% highlight bash %}
-git branch funcionalidade_x
+git config --global user.name "Nome Completo"
+git config --global user.email "nome.sobrenome@gmail.com"
 {% endhighlight %}
 
 
-## Listando as branchs do projeto
-Para listar as branchs do projeto utilize o seguinte comando:
+## Crie seu repositório no Git Hub
+Crie uma conta ou realize login no site do [Git Hub](https://github.com).
+Agora crie um novo repositório clicando no botão `New`.
+
+
+## Clonar um repositório
+Para criar um `clone` do seu repositório utilize o comando a seguir, substituindo pelo endereço do seu repositório:
 {% highlight bash %}
-git branch
+git clone https://github.com/marcoaugustoandrade/curso-de-git.git
 {% endhighlight %}
 
 
-## Alternando entre os branchs
-Para mudar de branch utilize o comando:
+## Fluxo de trabalho
+Há 3 locais dentro do seu repositório nomeados da seguinte forma:
+1) **Working directory**: contém os arquivos do repositório
+2) **Stage**: área temporária para controlar quais arquivos vão para o commit
+3) **Head**: aponta para o último commit
+
+
+## Verificando o status do repositório
+Sempre é possível, e necessário, verificar o status do repositório com o seguinte comando:
 {% highlight bash %}
-git checkout funcionalidade_x
 git status
 {% endhighlight %}
 
 
-## Enviando a branch para o repositório remoto
-Para enviar os commits da branch criada para o repositório remoto utilize o seguinte comando:
+## Propondo mudanças
+Para adicionar algum arquivo ao `stage`, ou seja, propor mudanças, utilize o comando:
 {% highlight bash %}
-git push -u origin funcionalidade_x
+git add nome-do-arquivo
 {% endhighlight %}
 
-
-## Mesclando branchs
-Geralmente, ao final do desenvolvimento de uma funcionalidade que está contida em uma branch é necessário mesclar com a branch master. Para isso, primeiro retorne para a branch master, e em seguida utilize o comando:
+Alternativamente utilize o comando a seguir para colocar todos os arquivos do projeto no stage:
 {% highlight bash %}
-git checkout master
-git merge funcionalidade_x
+git add .
 {% endhighlight %}
-Assim, o conteúdo da branch `funcionalidade_x` será mesclado a branch `master`.
 
-
-## Removendo branchs
-Você pode remover as branchs que foram mescladas ou são descartáveis, voltando a branch master, e em seguida utilizando os seguintes comandos:
+Para remover um arquivo da área de stage utilize o comando:
 {% highlight bash %}
-git checkout master
-git branch -d funcionalidade_x
+git reset HEAD -- nome-do-arquivo
 {% endhighlight %}
 
 
-## Resolvendo conflitos
-Na branch `master` crie um arquivo `contato.html` e adicione o seguinte conteúdo:
-{% highlight html %}
-<h1>Página de contato</h1>
-{% endhighlight %}
-
-Faça o commit das alterações (na branch master):
+## Confirmando as mudanças
+Para de fato gravar as mudanças, ou seja, realizar os commits, utilize o comando:
 {% highlight bash %}
-git add contato.html
-git commit -m "Adicionando página de contato"
+git commit -m "Comentários sobre o as alterações"
 {% endhighlight %}
+Assim, os arquivos foram para o head.
 
-Agora crie o branch `dev_maria`:
+Se após gravar as mudanças você realizar alterações nos arquivos e deseja-las descarta-las, ou seja, voltar os arquivos ao último commit utilize o comando:
 {% highlight bash %}
-git branch dev_maria
-git checkout dev_maria
+git checkout -- nome-do-arquivo
 {% endhighlight %}
 
-Na branch `dev_maria` altere para ficar com o seguinte conteúdo:
-{% highlight html %}
-<h1>Página de contato</h1>
-<h2>Informe os dados para contato</h2>
-{% endhighlight %}
-
-Faça o commit das alterações (na branch dev_maria):
+Com o comando a seguir é possível listar todos os commits realizados. Observe que os commits são listados a partir do mais recente, e que cada commit é identificado por um número hexadecimal:
 {% highlight bash %}
-git add contato.html
-git commit -m "Adicionando subtitulo"
+git log
+git log --stat
 {% endhighlight %}
+A opção `--stat` mostra mais informações, como a quantidade de inserções e remoções dos arquivos contidos no commit.
 
-Retorne ao branch `master` e crie o branch `dev_jose`:
+Para mostrar os commits de forma resumida utilize algum dos seguintes comandos:
 {% highlight bash %}
-git checkout master
-git branch dev_jose
-git checkout dev_jose
+git log --oneline
+git log --oneline --stat
 {% endhighlight %}
 
-Na branch `dev_jose` altere para ficar com o seguinte conteúdo:
-{% highlight html %}
-<h1>Página de contato</h1>
-<h2>Dados para contato</h2>
-{% endhighlight %}
 
-Faça o commit das alterações (na branch dev_jose):
+## Revertendo um commit
+## Voltando a um determinando commit
+Também é possível voltar a um determinado commmit. É importante destacar que os commits entre o commit atual e o commit que será retornado serão descartados. O número apresentado no comando corresponde aos 4 primeiros dígitos do hash do commit:
 {% highlight bash %}
-git add contato.html
-git commit -m "Adicionando subtitulo na página de contato"
+git reset 02A2 --hard
 {% endhighlight %}
 
-Observer que as branchs `dev_maria` e `dev_jose` alterado o mesmo local do arquivo.
 
-Retorne ao branch master e faça o merge da branch `dev_maria`:
+## Visualizando diferenças entre commits
+Para mostrar as diferenças entre commits utilize o `diff`. No primeiro comando é mostrado a diferença entre o arquivo atual e o último commit. No segundo comando são mostradas as diferenças entre dois commits, informando seus hashs:
 {% highlight bash %}
-git checkout master
-git merge dev_maria
+git diff
+git diff c744 6623
 {% endhighlight %}
 
-Até aqui tudo funcionando, a branch `master` foi atualizada de acordo com a branch `dev_maria`. Agora vamos fazer o merge da branch `dev_jose` na branch `master`:
+
+## Rotulando um commit
+Você pode rotular os releases de software com o git. O primeiro parâmetro é a versão e o segundo parâmetro é o hash do commit.
 {% highlight bash %}
-git merge dev_jose
+git tag 1.0.0 0AB12
 {% endhighlight %}
 
-Observe que apareceu uma mensagem informando sobre o conflito no arquivo contato.html. Abra esse arquivo em um editor de textos, como o VS Code, e observe que os conflitos ficam destacados no código:
-{% highlight html %}
-<h1>Página de contato</h1>
-<<<<<<< HEAD
-<h2>Informe os dados para contato</h2>
-=======
-<h2>Dados para contato</h2>
->>>>>>> dev_jose
-{% endhighlight %}
 
-Após resolve-los, ou seja, definir o que ficará ou não código, faça o commit das alterações:
+## Enviando as alterações para o servidor
+Caso queira enviar as mudanças para o repositório remoto utilize o comando:
 {% highlight bash %}
-git add contato.html
-git commit -m "Resolvendo conflitos"
+git push -u origin master
 {% endhighlight %}
+
+Obs.: `master` diz respeito a um [branch](), sendo assim, caso queira enviar outro branch, no caso `dev`, faça da seguinte forma:
+{% highlight bash %}
+git push -u origin dev
+{% endhighlight %}
+
+
+## Ignorando arquivos e pastas
+Caso queira ignorar arquivos ou pastas, para que os mesmos não façam parte do repositório controlado pelo Git, basta editar o arquivo `.gitignore`, identificando-os.
+
+
+## Atualizando os repositórios
+Imagine a seguinte situação: você começou um projeto na escola e enviou os commits para o seu repositório remoto. Em casa fez o clone do repositório e realizou mais alguns commits e enviou para o repositório remoto. Agora o seu repositório na escola está desatualizado em relação ao repositório remoto. Para atualiza-lo utilize o seguinte comando:
+{% highlight bash %}
+git pull
+{% endhighlight %}
+
+
+## Criando um repositório local
+Você também pode criar um repositório local, ou seja, sem vínculos com o reposiório que clonou do Git Hub com o seguinte comando:
+{% highlight bash %}
+git init
+{% endhighlight %}
+O funcionamento é o mesmo, com exceção que você não irá enviar para um repositório remoto.
+
+
+## Adicionando um repositório remoto
+Se após criar um repositório local for necessário anexa-lo a um repositório remoto, utilize o seguinte comando:
+{% highlight bash %}
+git remote add origin https://github.com/marcoaugustoandrade/curso-de-git.git
+{% endhighlight %}
+Agora você pode fazer `git` push e enviar os commits para o repositório remoto.
