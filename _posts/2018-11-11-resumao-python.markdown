@@ -5,8 +5,6 @@ date:   2018-11-11 20:03:00 -0400
 categories: python
 ---
 
-# Resumão Python
-
 Este é um resumão da linguagem Python para quem já sabe programar.
 
 Para utilizar o interpretador do Python 3 basta chama-lo no terminal:
