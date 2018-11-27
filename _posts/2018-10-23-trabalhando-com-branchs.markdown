@@ -129,3 +129,20 @@ Após resolve-los, ou seja, definir o que ficará ou não código, faça o commi
 git add contato.html
 git commit -m "Resolvendo conflitos"
 {% endhighlight %}
+
+## Clonando branchs do repositório remoto
+O branch baixado, por padrão, a partir do repósitorio remoto é o `master`. Assim, para listar todos os branchs disponíveis utilize o comando:
+{% highlight bash %}
+git branch -a
+{% endhighlight %}
+
+E agora, para clonar um dos branchs, disponíveis no repositório remoto, utilize o comando:
+{% highlight bash %}
+git checkout -b nome-do-branch origin/nome-do-branch
+{% endhighlight %}
+
+Uma outra opçao seria clonar diretamente um determinado branch:
+{% highlight bash %}
+git clone -b nome-do-branch endereço-do-repositório
+{% endhighlight %}
+
