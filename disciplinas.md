@@ -16,7 +16,7 @@ permalink: /disciplinas/
     <li><a href="/disciplinas/2018/2/linguagem">Linguagem de Programação</a></li>
 </ul>
 
-<h2>2018/2</h2>
+<h2>2019/2</h2>
 <ul>
     <li><a href="/disciplinas/2019/2/tcc2">TCC 2</a></li>
 </ul>
