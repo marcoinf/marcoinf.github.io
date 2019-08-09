@@ -1,33 +1,44 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    {% include favicon.html %}
-    <title>
-        {% if page.title %} {{ page.title }}
-        {% else %} {{ site.title }}
-        {% endif %}
-    </title>
-    <link rel="stylesheet" href="assets/css/style.css">
-    <link rel="stylesheet" href="assets/css/highlight.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>
+      {% if page.title %} {{ page.title }}
+      {% else %} {{ site.title }}
+      {% endif %}
+  </title>
+  {% include favicon.html %}
+
+  <link rel="stylesheet" href="/assets/css/normalize.css">
+  <link rel="stylesheet" href="/assets/css/style.css">
+  <link rel="stylesheet" href="/assets/css/highlight.css">
+  <link rel="stylesheet" href="/assets/css/dark.css" id="style">
+  
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans|Roboto&display=swap" rel="stylesheet"> 
 </head>
-<body>
-    {% include search.html %}
-    {% include header.html %}
-    <main class="index" id="conteudo">
-        <div>
-            <img src="assets/images/marco.gif" class="index__photo">
-        </div>
-        <div class="index__texto">
-            <p>Sou professor no IFRO (Instituto Federal de Rondônia) Campus Vilhena, atuando no CST em ADS (Análise e Desenvolvimento de Sistemas).</p>
-            <p>Desenvolvo projetos e ministro aulas em disciplinas de programção com foco em tecnologias como HTML5, CSS3, JavaScript, Bootstrap, Materialize, React, Axios, NodeJS, ExpressJS, PHP, Laravel, MySQL, MongoDB e Redis</p>
-            <p>Para me contactar envie um email para <i>marco.andrade at ifro.edu.br</i></p>
-            <p>Você pode conferir meu currículo completo na <a href="#">Plataforma Lattes</a>.</p>
-        </div>
-    </main>
-    {% include footer.html %}
-    {% include analytics.html %}
+<body onload="verifyTheme()">
+  
+  {% include header.html %}
+  
+  <main class="content" markdown="1">
+    
+    <img src="/assets/images/marco.jpg" alt="Professor Marco Antonio Andrade" class="content__autor">
+    
+    <h1 class="content__title">{{page.title}}</h1>
+    
+    {% for post in site.posts %}	
+    <h2><a href="{{ post.url }}">{{ post.title }}</a></h2>
+    <p>{{ post.date | date: "%d/%m/%Y" }}</p>			
+    {% endfor %}
+    
+  </main>
+  
+  {% include footer.html %}
+  {% include analytics.html %}
+
+  <script src="/assets/js/functions.js"></script>
+  <script>verifyCookie();</script>
 </body>
 </html>

@@ -1,19 +1,37 @@
-window.onscroll = function() {scrollFunction()};
+function setCookie(){
+  document.cookie = "cookies=true";
+  verifyCookie();
+}
 
-function scrollFunction() {
-    var btn_top = document.querySelector("#btn_top");
-    if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-        btn_top.style.display = "inline-block";
-    } else {
-        btn_top.style.display = "none";
+function verifyCookie(){
+  
+  if (document.cookie.indexOf("cookies") >= 0){
+    document.querySelector(".cookies").style.display = "none";
+  }
+}
+
+function verifyTheme(){
+  
+  if (document.cookie.indexOf("style") < 0){
+    document.cookie = "style=dark";
+  }
+}
+
+
+function changeTheme(){
+  
+  verifyTheme();
+  let value = '; ' + document.cookie;
+  let cookies = value.split('; ');
+  
+  for (i = 0; i < cookies.length; i++){
+      
+    if (cookies[i] == "style=dark"){
+      document.cookie = "style=light";
+      style.href = '/assets/css/light.css';
+    } else if (cookies[i] == "style=light"){
+      document.cookie = "style=dark";
+      style.href = '/assets/css/dark.css';
     }
-}
-
-var search = document.querySelector("#box-search");
-function show_search(){
-    search.style.display = "block";
-    document.querySelector("#search-input").focus();
-}
-function close_search(){
-    search.style.display = "none";
+  }
 }

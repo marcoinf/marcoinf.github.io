@@ -5,6 +5,7 @@ date:   2018-10-30 13:38:00 -0400
 categories: javascript
 ---
 
+
 ## Criando uma data a partir de um objeto date
 {% highlight javascript %}
 let hoje = new Date();

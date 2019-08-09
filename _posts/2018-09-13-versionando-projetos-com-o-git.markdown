@@ -82,8 +82,7 @@ git log --oneline --stat
 {% endhighlight %}
 
 
-## Revertendo um commit
-## Voltando a um determinando commit
+## Revertendo um commit: voltando a um determinando commit
 Também é possível voltar a um determinado commmit. É importante destacar que os commits entre o commit atual e o commit que será retornado serão descartados. O número apresentado no comando corresponde aos 4 primeiros dígitos do hash do commit:
 {% highlight bash %}
 git reset 02A2 --hard

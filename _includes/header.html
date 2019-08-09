@@ -1,35 +1,15 @@
 <header class="header">
-    <nav>
-        <ul class="header__menu-acessivel">
-            <li><a href="#conteudo" accesskey="1">Ir para o conteúdo <span>1</span></a></li>
-            <li><a href="#menu" accesskey="2">Ir para o menu <span>2</span></a></li>
-            <li><a href="#box-search" accesskey="3" onclick="show_search()">Ir para a busca <span>3</span></a></li>
-            <li><a href="#rodape" accesskey="4">Ir para o rodapé <span>4</span></a></li>
-        </ul>
-    </nav>
-    <h1 class="header__title"><a href="/" class="header__title-link">Prof. Marco Antonio Andrade</a></h1>
-    <nav class="header__menu" id="menu">
-        <ul class="header__menu-lista">
-            {% if page.layout == 'home' %} 
-            <li><a href="/" class="header__menu-link header__menu--active">Início</a></li>
-            {% else %}
-                <li><a href="/" class="header__menu-link">Início</a></li>
-            {% endif %}
-            {% if page.title == 'Disciplinas' or page.type == 'disciplinas' %} 
-            <li><a href="/disciplinas" class="header__menu-link header__menu--active">Disciplinas</a></li>
-            {% else %}
-                <li><a href="/disciplinas" class="header__menu-link">Disciplinas</a></li>
-            {% endif %}
-            {% if page.title == 'Posts' or page.layout == 'post' %} 
-                <li><a href="/posts" class="header__menu-link header__menu--active">Posts</a></li>
-            {% else %}
-                <li><a href="/posts" class="header__menu-link">Posts</a></li>
-            {% endif %}
-            {% if page.title == 'Projetos' %} 
-                <li><a href="/projetos" class="header__menu-link header__menu--active">Projetos</a></li>
-            {% else %}
-                <li><a href="/projetos" class="header__menu-link">Projetos</a></li>
-            {% endif %}
-        </ul>
-    </nav>
+  <nav class="menu">
+    <ul class="menu__bar">
+      <li class="menu__item"><a href="/" alt="Início" title="Início"><img src="/assets/images/menu/home.svg" width="33" height="33"></a></li>
+      <li class="menu__item"><a href="" alt="Pesquisar" title="Pesquisar"><img src="/assets/images/menu/search.svg" width="33" height="33"></a></li>
+      <li class="menu__item"><a href="/disciplinas" alt="Disciplinas" title="Disciplinas"><img src="/assets/images/menu/academic.svg" width="33" height="33"></a></li>
+    </ul>
+    <ul class="menu__bar">
+      <li class="menu__item"><a href="https://github.com/marcoaugustoandrade/" alt="GitHub" title="GitHub"><img src="/assets/images/menu/github.svg" width="33" height="33"></a></li>
+      <li class="menu__item"><a href="/feed.xml" alt="RSS" title="RSS"><img src="/assets/images/menu/rss.svg" width="33" height="33"></a></li>
+      <li class="menu__item"><a href="#" alt="Notificações" title="Notificações"><img src="/assets/images/menu/notification.svg" width="33" height="33"></a></li>
+      <li class="menu__item"><a href="#" alt="Trocar tema" title="Trocar tema"><img src="/assets/images/menu/theme.svg" width="33" height="33" onclick="changeTheme()"></a></li>
+    </ul>
+  </nav>
 </header>
