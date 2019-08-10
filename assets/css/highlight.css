@@ -1,19 +1,16 @@
 .highlight {
-  /* background-color: rgb(216, 216, 216); */
   background-color: #333A40;
   border: 0.005em solid black;
   padding: 1em;
   margin-top: 1em;
   margin-bottom: 1em;
 }
-  /* .highlighter-rouge .highlight {
-    background: #eef; } */
-  /* .highlighter-rouge {
-    background: rgba(235, 58, 58, 0.9);
-    color: #FFFFFF;
-    padding: 0.2em;
-    border-radius: 0.2em;
-  } */
+.highlighter-rouge{
+  background: rgba(235, 58, 58, 0.9);
+  color: #FFFFFF;
+  padding: 0.2em;
+  border-radius: 0.2em;
+}
   .highlight .c {
     color: #998;
     font-style: italic; }
@@ -147,3 +144,5 @@
     color: #008080; }
   .highlight .il {
     color: #099; }
+
+

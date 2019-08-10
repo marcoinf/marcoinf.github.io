@@ -177,12 +177,6 @@ a:hover{
 
 
 /* Messages */
-.highlighter-rouge{
-  background: rgba(235, 58, 58, 0.9);
-  color: #FFFFFF;
-  padding: 0.2em;
-  border-radius: 0.2em;
-}
 .alert-blue{
   border-left: 0.5em #337ab7 solid;
   background-color: rgba(51,122,183, 0.801);
