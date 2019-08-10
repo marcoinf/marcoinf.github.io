@@ -24,6 +24,7 @@ url: "http://marcoandra.de" # the base hostname & protocol for your site, e.g. h
 twitter_username: marcoaugustoandrade
 github_username:  marcoaugustoandrade
 
+# Buscando as páginas no diretório _pages
 include: ['_pages']
 
 # Build settings
@@ -31,6 +32,11 @@ markdown: kramdown
 theme: minima
 plugins:
   - jekyll-feed
+
+# Algolia
+algolia:
+  application_id: '2GHCE399VU'
+  index_name: 'dev_MARCO'
 
 # Exclude from processing.
 # The following items will not be processed, by default. Create a custom list
