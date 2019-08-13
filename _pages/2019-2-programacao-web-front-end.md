@@ -23,25 +23,29 @@ date:   2019-08-09 16:12:00 -0400
 ## Avaliação da disciplina
 ### Trabalho 1
 Implemente com HTML e CSS o protótipo do site do [Curso CST em ADS](https://www.figma.com/file/SZcHPL0SSuJukO8u1FD8BsJ3/Curso-ADS?node-id=0%3A1), criando um repositório no GitHub com acesso público.
+
 Individual
+
 Prazo final para entrega até o dia **01/10/2019** com valor de **10 pontos**.
 
 
 ## Trabalho 2
 Implemente com HTML e CSS o protótipo do site da [Maratona de Programação](https://www.figma.com/file/GYx3Od8yJmR5QyMBGk7pysfi/Maratona?node-id=0%3A1), criando um repositório no GitHub com acesso público.
+
 Individual
+
 Prazo final para entrega até o dia **01/10/2019** com valor de **10 pontos**.
 
 
 ## Trabalho 3
 Cada grupo irá desenvolver um novo site para os projetos listados a seguir.
-Grupo 1: DHANIELY, MANOEL, WALLYSON (Linux Mint)
-Grupo 2: EVALDO, IKARO, JEFFERSON (PlantUML)
-Grupo 3: GABRIEL, JHONI, MATHEUS, VICTOR (Emmet)
-Grupo 4: DANIEL, JULIANO, NELSON, RAYSSA (EditorConfig)
+* Grupo 1: DHANIELY, MANOEL, WALLYSON (Linux Mint)
+* Grupo 2: EVALDO, IKARO, JEFFERSON (PlantUML)
+* Grupo 3: GABRIEL, JHONI, MATHEUS, VICTOR (Emmet)
+* Grupo 4: DANIEL, JULIANO, NELSON, RAYSSA (EditorConfig)
 
 ### Projetos:
-Linux Mint
+**Linux Mint**
 O [Linux Mint](https://linuxmint.com/) é uma distribuição Linux baseada no Ubuntu.
 Pontos que devem ser focados: recursos oferecidos pela distribuição.
 Dica: utilize screenshots das principais funcionalidades disponíveis.
@@ -70,6 +74,7 @@ Requisitos básicos:
 * O deploy deve ser realizado com o GitHub Pages.
 
 Entrega até o dia **11/09/2019** com valor **30 pontos**
+
 Apresentação no dia **11/09/2019** com valor de **10 pontos**.
 
 
@@ -83,4 +88,5 @@ Grupo 4:
 As funcionalidades devem ser integradas com o repositório **a definir** com o uso de Pull Requests.
 
 Entrega até o dia **a definir** com valor **30 pontos**.
+
 Apresentação no dia **a definir** com valor de **10 pontos**.
