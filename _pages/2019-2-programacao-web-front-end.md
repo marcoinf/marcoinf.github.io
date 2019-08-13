@@ -29,7 +29,7 @@ Individual
 Prazo final para entrega até o dia **01/10/2019** com valor de **10 pontos**.
 
 
-## Trabalho 2
+### Trabalho 2
 Implemente com HTML e CSS o protótipo do site da [Maratona de Programação](https://www.figma.com/file/GYx3Od8yJmR5QyMBGk7pysfi/Maratona?node-id=0%3A1), criando um repositório no GitHub com acesso público.
 
 Individual
@@ -37,14 +37,14 @@ Individual
 Prazo final para entrega até o dia **01/10/2019** com valor de **10 pontos**.
 
 
-## Trabalho 3
+### Trabalho 3
 Cada grupo irá desenvolver um novo site para os projetos listados a seguir.
 * Grupo 1: DHANIELY, MANOEL, WALLYSON (Linux Mint)
 * Grupo 2: EVALDO, IKARO, JEFFERSON (PlantUML)
 * Grupo 3: GABRIEL, JHONI, MATHEUS, VICTOR (Emmet)
 * Grupo 4: DANIEL, JULIANO, NELSON, RAYSSA (EditorConfig)
 
-### Projetos:
+#### Projetos:
 **Linux Mint**
 O [Linux Mint](https://linuxmint.com/) é uma distribuição Linux baseada no Ubuntu.
 Pontos que devem ser focados: recursos oferecidos pela distribuição.
