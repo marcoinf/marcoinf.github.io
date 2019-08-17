@@ -1,0 +1,1325 @@
+swagger: "2.0"
+
+info:
+  version: "1.0.0"
+  title: "Defesa Civil da cidade do Recife"
+
+tags:
+- name: "Processo"
+- name: "Solicitação"
+- name: "Lona"
+- name: "Vistoria"
+- name: "Ocorrência"
+- name: "Tipos de Ocorrência"
+- name: "Risco"
+- name: "Avaliador"
+- name: "RPA"
+- name: "Bairro"
+- name: "Microregião"
+
+paths:
+
+  # Processo
+  /processo:
+    post:
+      tags:
+      - "Processo"
+      summary: "Adiciona um novo processo"
+      consumes:
+      - "application/json"
+      produces:
+      - "application/json"
+      parameters:
+      - in: "body"
+        name: "body"
+        required: true
+        schema:
+          $ref: '#/definitions/Processo'
+      responses:
+        200:
+          description: "Success"
+          schema:
+            $ref: '#/definitions/Processo' 
+
+    get:
+      tags:
+      - "Processo"
+      summary: "Lista todos os processos cadastrados"
+      consumes:
+      - "application/json"
+      produces:
+      - "application/json"
+      responses:
+        200:
+          description: "Success"
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/Processo' 
+
+  /processo/{id}:
+    get:
+      tags:
+      - "Processo"
+      summary: "Lista um processo através do seu id"
+      consumes:
+      - "application/json"
+      produces:
+      - "application/json"
+      parameters:
+        - name: id
+          in: path
+          description: id do processo
+          required: true
+          type: integer
+      responses:
+        200:
+          description: "Success"
+          schema:
+            $ref: '#/definitions/Processo'
+    
+    put:
+      tags:
+      - "Processo"
+      summary: "Altera dados de um processo"
+      consumes:
+      - "application/json"
+      produces:
+      - "application/json"
+      parameters:
+        - name: id
+          in: path
+          description: id do processo
+          required: true
+          type: integer
+        - in: "body"
+          name: "body"
+          required: true
+          schema:
+            $ref: '#/definitions/Processo'
+      responses:
+        200:
+          description: "Success"
+          schema:
+            $ref: '#/definitions/Processo' 
+  
+  /processo/solicitacoes/{id}:
+    get:
+      tags:
+      - "Processo"
+      summary: "Lista todas as solicitações de um processo"
+      consumes:
+      - "application/json"
+      produces:
+      - "application/json"
+      parameters:
+        - name: id
+          in: path
+          description: id do processo
+          required: true
+          type: integer
+      responses:
+        200:
+          description: "Success"
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/Solicitacao' 
+  
+  /processo/lonas/{id}:
+    get:
+      tags:
+      - "Processo"
+      summary: "Lista todas as lonas de um processo"
+      consumes:
+      - "application/json"
+      produces:
+      - "application/json"
+      parameters:
+        - name: id
+          in: path
+          description: id do processo
+          required: true
+          type: integer      
+      responses:
+        200:
+          description: "Success"
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/Lona' 
+              
+  /processo/vistorias/{id}:
+    get:
+      tags:
+      - "Processo"
+      summary: "Lista todas as vistorias de um processo"
+      consumes:
+      - "application/json"
+      produces:
+      - "application/json"
+      parameters:
+        - name: id
+          in: path
+          description: id do processo
+          required: true
+          type: integer      
+      responses:
+        200:
+          description: "Success"
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/Vistoria'   
+
+  /processo/ocorrencias/{id}:
+    get:
+      tags:
+      - "Processo"
+      summary: "Lista todas as ocorrências de um processo"
+      consumes:
+      - "application/json"
+      produces:
+      - "application/json"
+      parameters:
+        - name: id
+          in: path
+          description: id do processo
+          required: true
+          type: integer      
+      responses:
+        200:
+          description: "Success"
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/Ocorrencia'   
+  
+  # Solicitação
+  /solicitacao:
+    post:
+      tags:
+      - "Solicitação"
+      summary: "Adiciona uma nova solicitação"
+      consumes:
+      - "application/json"
+      produces:
+      - "application/json"
+      parameters:
+      - in: "body"
+        name: "body"
+        required: true
+        schema:
+          $ref: '#/definitions/Solicitacao'
+      responses:
+        200:
+          description: "Success"
+          schema:
+            $ref: '#/definitions/Solicitacao'
+
+  /solicitacao/{id}:
+    get:
+      tags:
+      - "Solicitação"
+      summary: "Lista uma solicitação através do seu id"
+      consumes:
+      - "application/json"
+      produces:
+      - "application/json"
+      parameters:
+        - name: id
+          in: path
+          description: id da solicitação
+          required: true
+          type: integer
+      responses:
+        200:
+          description: "Success"
+          schema:
+            $ref: '#/definitions/Solicitacao'
+    
+    put:
+      tags:
+      - "Solicitação"
+      summary: "Altera dados de uma solicitação"
+      consumes:
+      - "application/json"
+      produces:
+      - "application/json"
+      parameters:
+        - name: id
+          in: path
+          description: id da solicitação
+          required: true
+          type: integer
+        - in: "body"
+          name: "body"
+          required: true
+          schema:
+            $ref: '#/definitions/Solicitacao'
+      responses:
+        200:
+          description: "Success"
+          schema:
+            $ref: '#/definitions/Solicitacao'  
+  
+  # Lona
+  /lona:
+    post:
+      tags:
+      - "Lona"
+      summary: "Adiciona uma nova solicitação de lona"
+      consumes:
+      - "application/json"
+      produces:
+      - "application/json"
+      parameters:
+      - in: "body"
+        name: "body"
+        required: true
+        schema:
+          $ref: '#/definitions/Lona'
+      responses:
+        200:
+          description: "Success"
+          schema:
+            $ref: '#/definitions/Lona' 
+
+  /lona/{id}:
+    get:
+      tags:
+      - "Lona"
+      summary: "Lista uma solicitação de lona através do seu id"
+      consumes:
+      - "application/json"
+      produces:
+      - "application/json"
+      parameters:
+        - name: id
+          in: path
+          description: id da lona
+          required: true
+          type: integer
+      responses:
+        200:
+          description: "Success"
+          schema:
+            $ref: '#/definitions/Lona'
+    
+    put:
+      tags:
+      - "Lona"
+      summary: "Altera dados de uma solicitação de lona"
+      consumes:
+      - "application/json"
+      produces:
+      - "application/json"
+      parameters:
+        - name: id
+          in: path
+          description: id da lona
+          required: true
+          type: integer
+        - in: "body"
+          name: "body"
+          required: true
+          schema:
+            $ref: '#/definitions/Lona'
+      responses:
+        200:
+          description: "Success"
+          schema:
+            $ref: '#/definitions/Lona'  
+  
+  # Vistoria
+  /vistoria:
+    post:
+      tags:
+      - "Vistoria"
+      summary: "Adiciona uma nova vistoria"
+      consumes:
+      - "application/json"
+      produces:
+      - "application/json"
+      parameters:
+      - in: "body"
+        name: "body"
+        required: true
+        schema:
+          $ref: '#/definitions/Vistoria'
+      responses:
+        200:
+          description: "Success"
+          schema:
+            $ref: '#/definitions/Vistoria' 
+
+  /vistoria/{id}:
+    get:
+      tags:
+      - "Vistoria"
+      summary: "Lista uma vistoria através do seu id"
+      consumes:
+      - "application/json"
+      produces:
+      - "application/json"
+      parameters:
+        - name: id
+          in: path
+          description: id da vistoria
+          required: true
+          type: integer
+      responses:
+        200:
+          description: "Success"
+          schema:
+            $ref: '#/definitions/Vistoria'
+    
+    put:
+      tags:
+      - "Vistoria"
+      summary: "Altera dados de uma vistoria"
+      consumes:
+      - "application/json"
+      produces:
+      - "application/json"
+      parameters:
+        - name: id
+          in: path
+          description: id da vistoria
+          required: true
+          type: integer
+        - in: "body"
+          name: "body"
+          required: true
+          schema:
+            $ref: '#/definitions/Vistoria'
+      responses:
+        200:
+          description: "Success"
+          schema:
+            $ref: '#/definitions/Vistoria'  
+  
+  # Ocorrência
+  /ocorrencia:
+    post:
+      tags:
+      - "Ocorrência"
+      summary: "Adiciona uma nova ocorrência"
+      consumes:
+      - "application/json"
+      produces:
+      - "application/json"
+      parameters:
+      - in: "body"
+        name: "body"
+        required: true
+        schema:
+          $ref: '#/definitions/Ocorrencia'
+      responses:
+        200:
+          description: "Success"
+          schema:
+            $ref: '#/definitions/Ocorrencia' 
+
+  /ocorrencia/{id}:
+    get:
+      tags:
+      - "Ocorrência"
+      summary: "Lista uma ocorrência através do seu id"
+      consumes:
+      - "application/json"
+      produces:
+      - "application/json"
+      parameters:
+        - name: id
+          in: path
+          description: id da ocorrência
+          required: true
+          type: integer
+      responses:
+        200:
+          description: "Success"
+          schema:
+            $ref: '#/definitions/Ocorrencia'
+    
+    put:
+      tags:
+      - "Ocorrência"
+      summary: "Altera dados de uma ocorrência"
+      consumes:
+      - "application/json"
+      produces:
+      - "application/json"
+      parameters:
+        - name: id
+          in: path
+          description: id da ocorrência
+          required: true
+          type: integer
+        - in: "body"
+          name: "body"
+          required: true
+          schema:
+            $ref: '#/definitions/Ocorrencia'
+      responses:
+        200:
+          description: "Success"
+          schema:
+            $ref: '#/definitions/Ocorrencia'  
+  
+  
+  # Tipos de ocorrência
+  /tiposdeocorrencia:
+    post:
+      tags:
+      - "Tipos de Ocorrência"
+      summary: "Adiciona um novo tipo de ocorrência"
+      consumes:
+      - "application/json"
+      produces:
+      - "application/json"
+      parameters:
+      - in: "body"
+        name: "body"
+        required: true
+        schema:
+          $ref: '#/definitions/TipoDeOcorrencia'
+      responses:
+        200:
+          description: "Success"
+          schema:
+            $ref: '#/definitions/TipoDeOcorrencia' 
+
+    get:
+      tags:
+      - "Tipos de Ocorrência"
+      summary: "Lista todos os tipos de ocorrencias cadastrados"
+      consumes:
+      - "application/json"
+      produces:
+      - "application/json"
+      responses:
+        200:
+          description: "Success"
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/TipoDeOcorrencia' 
+
+  /tiposdeocorrencia/{id}:
+    get:
+      tags:
+      - "Tipos de Ocorrência"
+      summary: "Lista um tipo de ocorrência através do seu id"
+      consumes:
+      - "application/json"
+      produces:
+      - "application/json"
+      parameters:
+        - name: id
+          in: path
+          description: id do tipo de ocorrência
+          required: true
+          type: integer
+      responses:
+        200:
+          description: "Success"
+          schema:
+            $ref: '#/definitions/TipoDeOcorrencia'
+    
+    put:
+      tags:
+      - "Tipos de Ocorrência"
+      summary: "Altera dados de um tipo de ocorrência"
+      consumes:
+      - "application/json"
+      produces:
+      - "application/json"
+      parameters:
+        - name: id
+          in: path
+          description: id do tipo de ocorrência
+          required: true
+          type: integer
+        - in: "body"
+          name: "body"
+          required: true
+          schema:
+            $ref: '#/definitions/TipoDeOcorrencia'
+      responses:
+        200:
+          description: "Success"
+          schema:
+            $ref: '#/definitions/TipoDeOcorrencia'  
+            
+    delete:
+      tags:
+      - "Tipos de Ocorrência"
+      summary: "Deleta um tipo de ocorrência através do seu id"
+      consumes:
+      - "application/json"
+      produces:
+      - "application/json"
+      parameters:
+        - name: id
+          in: path
+          description: id do tipo de ocorrência
+          required: true
+          type: integer
+      responses:
+        200:
+          description: "Success"
+          schema:
+            $ref: '#/definitions/TipoDeOcorrencia'
+
+  # Risco
+  /risco:
+    post:
+      tags:
+      - "Risco"
+      summary: "Adiciona um novo risco"
+      consumes:
+      - "application/json"
+      produces:
+      - "application/json"
+      parameters:
+      - in: "body"
+        name: "body"
+        required: true
+        schema:
+          $ref: '#/definitions/Risco'
+      responses:
+        200:
+          description: "Success"
+          schema:
+            $ref: '#/definitions/Risco' 
+
+    get:
+      tags:
+      - "Risco"
+      summary: "Lista todos os riscos cadastrados"
+      consumes:
+      - "application/json"
+      produces:
+      - "application/json"
+      responses:
+        200:
+          description: "Success"
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/Risco' 
+
+  /risco/{id}:
+    get:
+      tags:
+      - "Risco"
+      summary: "Lista um risco através do seu id"
+      consumes:
+      - "application/json"
+      produces:
+      - "application/json"
+      parameters:
+        - name: id
+          in: path
+          description: id do risco
+          required: true
+          type: integer
+      responses:
+        200:
+          description: "Success"
+          schema:
+            $ref: '#/definitions/Risco'
+    
+    put:
+      tags:
+      - "Risco"
+      summary: "Altera dados de um risco"
+      consumes:
+      - "application/json"
+      produces:
+      - "application/json"
+      parameters:
+        - name: id
+          in: path
+          description: id do risco
+          required: true
+          type: integer
+        - in: "body"
+          name: "body"
+          required: true
+          schema:
+            $ref: '#/definitions/Risco'
+      responses:
+        200:
+          description: "Success"
+          schema:
+            $ref: '#/definitions/Risco'
+
+    delete:
+      tags:
+      - "Risco"
+      summary: "Deleta um risco através do seu id"
+      consumes:
+      - "application/json"
+      produces:
+      - "application/json"
+      parameters:
+        - name: id
+          in: path
+          description: id do risco
+          required: true
+          type: integer
+      responses:
+        200:
+          description: "Success"
+          schema:
+            $ref: '#/definitions/Risco'
+
+  # Avaliador
+  /avaliador:
+    post:
+      tags:
+      - "Avaliador"
+      summary: "Adiciona um novo avaliador"
+      consumes:
+      - "application/json"
+      produces:
+      - "application/json"
+      parameters:
+      - in: "body"
+        name: "body"
+        required: true
+        schema:
+          $ref: '#/definitions/Avaliador'
+      responses:
+        200:
+          description: "Success"
+          schema:
+            $ref: '#/definitions/Avaliador' 
+
+    get:
+      tags:
+      - "Avaliador"
+      summary: "Lista todos os avaliadores cadastrados"
+      consumes:
+      - "application/json"
+      produces:
+      - "application/json"
+      responses:
+        200:
+          description: "Success"
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/Avaliador' 
+
+  /avaliador/{id}:
+    get:
+      tags:
+      - "Avaliador"
+      summary: "Lista um avaliador através do seu id"
+      consumes:
+      - "application/json"
+      produces:
+      - "application/json"
+      parameters:
+        - name: id
+          in: path
+          description: id do avaliador
+          required: true
+          type: integer
+      responses:
+        200:
+          description: "Success"
+          schema:
+            $ref: '#/definitions/Avaliador'
+    
+    put:
+      tags:
+      - "Avaliador"
+      summary: "Altera dados de um avaliador"
+      consumes:
+      - "application/json"
+      produces:
+      - "application/json"
+      parameters:
+        - name: id
+          in: path
+          description: id do avaliador
+          required: true
+          type: integer
+        - in: "body"
+          name: "body"
+          required: true
+          schema:
+            $ref: '#/definitions/Avaliador'
+      responses:
+        200:
+          description: "Success"
+          schema:
+            $ref: '#/definitions/Avaliador'
+
+    delete:
+      tags:
+      - "Avaliador"
+      summary: "Deleta um avaliador através do seu id"
+      consumes:
+      - "application/json"
+      produces:
+      - "application/json"
+      parameters:
+        - name: id
+          in: path
+          description: id do avaliador
+          required: true
+          type: integer
+      responses:
+        200:
+          description: "Success"
+          schema:
+            $ref: '#/definitions/Avaliador'
+            
+  # RPA
+  /rpa:
+    post:
+      tags:
+      - "RPA"
+      summary: "Adiciona uma nova RPA"
+      consumes:
+      - "application/json"
+      produces:
+      - "application/json"
+      parameters:
+      - in: "body"
+        name: "body"
+        required: true
+        schema:
+          $ref: '#/definitions/RPA'
+      responses:
+        200:
+          description: "Success"
+          schema:
+            $ref: '#/definitions/RPA' 
+
+    get:
+      tags:
+      - "RPA"
+      summary: "Lista todas as RPAs cadastradas"
+      consumes:
+      - "application/json"
+      produces:
+      - "application/json"
+      responses:
+        200:
+          description: "Success"
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/RPA' 
+
+  /rpa/{id}:
+    get:
+      tags:
+      - "RPA"
+      summary: "Lista uma RPA através do seu id"
+      consumes:
+      - "application/json"
+      produces:
+      - "application/json"
+      parameters:
+        - name: id
+          in: path
+          description: id da RPA
+          required: true
+          type: integer
+      responses:
+        200:
+          description: "Success"
+          schema:
+            $ref: '#/definitions/RPA'
+    
+    put:
+      tags:
+      - "RPA"
+      summary: "Altera dados de uma RPA"
+      consumes:
+      - "application/json"
+      produces:
+      - "application/json"
+      parameters:
+        - name: id
+          in: path
+          description: id da RPA
+          required: true
+          type: integer
+        - in: "body"
+          name: "body"
+          required: true
+          schema:
+            $ref: '#/definitions/RPA'
+      responses:
+        200:
+          description: "Success"
+          schema:
+            $ref: '#/definitions/RPA'
+            
+    delete:
+      tags:
+      - "RPA"
+      summary: "Deleta uma RPA através do seu id"
+      consumes:
+      - "application/json"
+      produces:
+      - "application/json"
+      parameters:
+        - name: id
+          in: path
+          description: id da RPA
+          required: true
+          type: integer
+      responses:
+        200:
+          description: "Success"
+          schema:
+            $ref: '#/definitions/RPA'
+
+  /rpa/processos/{id}:
+    get:
+      tags:
+      - "RPA"
+      summary: "Lista todos os processos de uma RPA"
+      consumes:
+      - "application/json"
+      produces:
+      - "application/json"
+      parameters:
+        - name: id
+          in: path
+          description: id da RPA
+          required: true
+          type: integer      
+      responses:
+        200:
+          description: "Success"
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/Processo'   
+  
+  # Bairro
+  /bairro:
+    post:
+      tags:
+      - "Bairro"
+      summary: "Adiciona um novo Bairro"
+      consumes:
+      - "application/json"
+      produces:
+      - "application/json"
+      parameters:
+      - in: "body"
+        name: "body"
+        required: true
+        schema:
+          $ref: '#/definitions/Bairro'
+      responses:
+        200:
+          description: "Success"
+          schema:
+            $ref: '#/definitions/Bairro' 
+
+    get:
+      tags:
+      - "Bairro"
+      summary: "Lista todos os bairros cadastrados"
+      consumes:
+      - "application/json"
+      produces:
+      - "application/json"
+      responses:
+        200:
+          description: "Success"
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/Bairro' 
+
+  /bairro/{id}:
+    get:
+      tags:
+      - "Bairro"
+      summary: "Lista um bairro através do seu id"
+      consumes:
+      - "application/json"
+      produces:
+      - "application/json"
+      parameters:
+        - name: id
+          in: path
+          description: id do bairro
+          required: true
+          type: integer
+      responses:
+        200:
+          description: "Success"
+          schema:
+            $ref: '#/definitions/Bairro'
+    
+    put:
+      tags:
+      - "Bairro"
+      summary: "Altera dados de um bairro"
+      consumes:
+      - "application/json"
+      produces:
+      - "application/json"
+      parameters:
+        - name: id
+          in: path
+          description: id do bairro
+          required: true
+          type: integer
+        - in: "body"
+          name: "body"
+          required: true
+          schema:
+            $ref: '#/definitions/Bairro'
+      responses:
+        200:
+          description: "Success"
+          schema:
+            $ref: '#/definitions/Bairro'
+
+    delete:
+      tags:
+      - "Bairro"
+      summary: "Deleta um bairro através do seu id"
+      consumes:
+      - "application/json"
+      produces:
+      - "application/json"
+      parameters:
+        - name: id
+          in: path
+          description: id do bairro
+          required: true
+          type: integer
+      responses:
+        200:
+          description: "Success"
+          schema:
+            $ref: '#/definitions/Bairro'
+
+  /bairro/processos/{id}:
+    get:
+      tags:
+      - "Bairro"
+      summary: "Lista todos os processos de um bairro"
+      consumes:
+      - "application/json"
+      produces:
+      - "application/json"
+      parameters:
+        - name: id
+          in: path
+          description: id do bairro
+          required: true
+          type: integer      
+      responses:
+        200:
+          description: "Success"
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/Processo'   
+
+  # Microregião
+  /microregiao:
+    post:
+      tags:
+      - "Microregião"
+      summary: "Adiciona uma nova microregião"
+      consumes:
+      - "application/json"
+      produces:
+      - "application/json"
+      parameters:
+      - in: "body"
+        name: "body"
+        required: true
+        schema:
+          $ref: '#/definitions/Microregiao'
+      responses:
+        200:
+          description: "Success"
+          schema:
+            $ref: '#/definitions/Microregiao' 
+
+    get:
+      tags:
+      - "Microregião"
+      summary: "Lista todas as microregiões cadastradas"
+      consumes:
+      - "application/json"
+      produces:
+      - "application/json"
+      responses:
+        200:
+          description: "Success"
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/Microregiao' 
+
+  /microregiao/{id}:
+    get:
+      tags:
+      - "Microregião"
+      summary: "Lista uma microregião através do seu id"
+      consumes:
+      - "application/json"
+      produces:
+      - "application/json"
+      parameters:
+        - name: id
+          in: path
+          description: id da microregião
+          required: true
+          type: integer
+      responses:
+        200:
+          description: "Success"
+          schema:
+            $ref: '#/definitions/Microregiao'
+    
+    put:
+      tags:
+      - "Microregião"
+      summary: "Altera dados de uma microregião"
+      consumes:
+      - "application/json"
+      produces:
+      - "application/json"
+      parameters:
+        - name: id
+          in: path
+          description: id da microregião
+          required: true
+          type: integer
+        - in: "body"
+          name: "body"
+          required: true
+          schema:
+            $ref: '#/definitions/Microregiao'
+      responses:
+        200:
+          description: "Success"
+          schema:
+            $ref: '#/definitions/Microregiao'
+
+    delete:
+      tags:
+      - "Microregião"
+      summary: "Deleta uma microregião através do seu id"
+      consumes:
+      - "application/json"
+      produces:
+      - "application/json"
+      parameters:
+        - name: id
+          in: path
+          description: id da microregião
+          required: true
+          type: integer
+      responses:
+        200:
+          description: "Success"
+          schema:
+            $ref: '#/definitions/Microregiao'
+
+  /microregiao/processos/{id}:
+    get:
+      tags:
+      - "Microregião"
+      summary: "Lista todos os processos de uma microregião"
+      consumes:
+      - "application/json"
+      produces:
+      - "application/json"
+      parameters:
+        - name: id
+          in: path
+          description: id da microregião
+          required: true
+          type: integer      
+      responses:
+        200:
+          description: "Success"
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/Processo'   
+
+
+
+
+
+definitions:
+  Processo:
+    type: object
+    properties:
+      processoNumero:
+        type: integer
+      dataInicio:
+        type: string
+      dataConclusao:
+        type: string
+      descricao:
+        type: string
+      regional:
+        type: string
+      endereco:
+        type: string
+      roteiro:
+        type: string
+      bairro:
+        type: integer
+      rpa:
+        type: integer
+      plantao:
+        type: boolean
+      origem:
+        type: string
+      latitude:
+        type: string
+      longitude:
+        type: string
+      vitimas:
+        type: boolean
+      vitimasFatais:
+        type: boolean
+      situacao:
+        type: string
+      tipo:
+        type: string
+      status:
+        type: string
+      localizacao:
+        type: string
+
+  Microregiao:
+    type: object
+    properties:
+      id:
+        type: integer
+      nome:
+        type: string
+
+  Bairro:
+    type: object
+    properties:
+      id:
+        type: integer
+      nome:
+        type: string
+      microregiao:
+        type: integer
+
+  RPA:
+    type: object
+    properties:
+      id:
+        type: integer
+      nome:
+        type: string
+
+  TipoDeOcorrencia:
+    type: object
+    properties:
+      id:
+        type: integer
+      descricao:
+        type: string
+
+  Ocorrencia:
+    type: object
+    properties:
+      id:
+        type: integer
+      processo:
+        type: integer
+      tipoDeOcorrencia:
+        type: integer
+
+  Risco:
+    type: object
+    properties:
+      id:
+        type: integer
+      descricao:
+        type: string
+  
+  Avaliador:
+    type: object
+    properties:
+      id:
+        type: integer
+      nome:
+        type: string
+
+  Solicitacao:
+    type: object
+    properties:
+      id:
+        type: integer
+      data:
+        type: string
+      hora:
+        type: string
+      descricao:
+        type: string
+      plantao:
+        type: boolean
+      processo:
+        type: integer
+
+  Vistoria:
+    type: object
+    properties:
+      id:
+        type: integer    
+      dataSolicitacao:
+        type: string
+      dataVistoria:
+        type: string
+      avaliador:
+        type: integer
+      risco:
+        type: integer
+
+  Lona:
+    type: object
+    properties:
+      id:
+        type: integer
+      data:
+        type: string
+      hora:
+        type: string
+      descricao:
+        type: string
+      plantao:
+        type: boolean
+      processoNumero:
+        type: integer
+      dataColocacao:
+        type: string
+      situacao:
+        type: boolean
+      justificativa:
+        type: string
+      qtdPontos:
+        type: integer
+      metragem:
+        type: number
