@@ -1,0 +1,22 @@
+{
+  "name": "marcoinf.github.io",
+  "version": "2.0.0",
+  "description": "Blog http://marcoandra.de",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/marcoinf/marcoinf.github.io.git"
+  },
+  "author": "Marco Antonio Augusto de Andrade",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/marcoinf/marcoinf.github.io/issues"
+  },
+  "homepage": "https://github.com/marcoinf/marcoinf.github.io#readme",
+  "devDependencies": {
+    "eslint": "^6.2.1"
+  }
+}
