@@ -6,3 +6,6 @@ Versão 2.0
 * Política de privacidade
 * Botão ir para o topo
 * Licença Creative Commons para todo o conteúdo
+* Comentários com Disqus
+* Google Analytics
+* Correção do bug na caixa de códigos
