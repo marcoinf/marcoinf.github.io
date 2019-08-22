@@ -32,7 +32,7 @@ Para contribuir para esse leia o arquivo [CONTRIBUTING](CONTRIBUTING.md) para ma
 
 
 ## Licença
-Esse projeto está licenciado com a licença MIT, veja o arquivo (LICENSE)[LICENSE] para mais detalhes.
+Esse projeto está licenciado com a licença MIT, veja o arquivo [LICENSE](LICENSE) para mais detalhes.
 
 
 ## Versionamento 
