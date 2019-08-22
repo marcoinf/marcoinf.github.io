@@ -16,47 +16,44 @@ function scrolltotop() {
     }, 5);
   }
 }
-document.querySelector("#gotop").addEventListener("click", () => {
+document.querySelector("#gotop").addEventListener("click", (event) => {
   event.preventDefault();
   scrolltotop();
 });
 
 // Cookies
-function setCookie(){
-  document.cookie = "cookies=true";
-  verifyCookie();
-}
-
-function verifyCookie(){
-  
-  if (document.cookie.indexOf("cookies") >= 0){
+function cookies(){
+  if (localStorage.getItem("cookies") == "true"){
     document.querySelector(".cookies").style.display = "none";
   }
 }
 
+function setCookies(){
+  localStorage.setItem("cookies", "true");
+  cookies();
+}
+document.querySelector("#btnacceptcookies").addEventListener("click", (event) => {
+  event.preventDefault();
+  setCookies();
+});
+
 // Theme
-function verifyTheme(){
-  
-  if (document.cookie.indexOf("style") < 0){
-    document.cookie = "style=dark";
+function theme(){
+  if (localStorage.getItem("theme") == "light"){
+    style.href = '/assets/css/light.css';
   }
 }
 
-
-function changeTheme(){
-  
-  verifyTheme();
-  let value = '; ' + document.cookie;
-  let cookies = value.split('; ');
-  
-  for (i = 0; i < cookies.length; i++){
-      
-    if (cookies[i] == "style=dark"){
-      document.cookie = "style=light";
-      style.href = '/assets/css/light.css';
-    } else if (cookies[i] == "style=light"){
-      document.cookie = "style=dark";
-      style.href = '/assets/css/dark.css';
-    }
+function setTheme(){
+  if (localStorage.getItem("theme") == null || localStorage.getItem("theme") == "dark"){
+    localStorage.setItem("theme", "light");
+    style.href = '/assets/css/light.css';
+  } else if (localStorage.getItem("theme") == "light"){
+    localStorage.setItem("theme", "dark");
+    style.href = '/assets/css/dark.css';
   }
 }
+document.querySelector("#theme").addEventListener("click", (event) => {
+  event.preventDefault();
+  setTheme();
+});
