@@ -16,7 +16,10 @@ date:   2019-08-09 16:12:00 -0400
 * [Banco de fotos Pexels](https://www.pexels.com/)
 * [Banco de fotos Wikimedia Commons](https://commons.wikimedia.org/wiki/Main_Page)
 * [Gerador de imagens responsivas](https://responsivebreakpoints.com/)
+* [Aprenda Layout com CSS](https://pt-br.learnlayout.com/)
+* [Pare de chutar e aprenda as propriedades CSS de posicionamento](https://medium.com/collabcode/pare-de-chutar-e-aprenda-as-propriedades-css-de-posicionamento-603154655121)
 * [Guia Flexbox](https://css-tricks.com/snippets/css/a-guide-to-flexbox/)
+* [Guia Flexbox - pt-br](https://origamid.com/projetos/flexbox-guia-completo/)
 * [Flexbox Froggy](https://flexboxfroggy.com/)
 
 
