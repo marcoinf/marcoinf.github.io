@@ -51,57 +51,45 @@ a:hover{
 }
 
 
-/* Menu */
+/* header */
 .header{
-  /* background-color: #EB3A3A;  */
   background-color: rgba(235, 58, 58, 0.9); 
   position: fixed;
   bottom: 0;
   left: 0;
   right: 0;
 }
-  /* @media screen and (min-width: 800px){
-      .header{
-          height: 100vh;
-          width: 4em;
-          top: 0;
-          position: relative;
-       
-      }
-  } */
 .menu{
   display: flex;
   justify-content: space-between;
   padding: 0.3em;
   max-width: 1200px;
   margin: 0 auto;
+
+  overflow-x: auto;
+  white-space: nowrap;
 }
-/* @media screen and (min-width: 800px){
-  .menu{
-      flex-direction: column;
-      justify-content: space-between;
-  }
-} */
 .menu__bar{
   list-style: none;
   display: flex;
 }
-/* @media screen and (min-width: 800px){
-  .menu__bar{
-      flex-direction: column;
-  }
-} */
 .menu__item{
   padding: 0.2em;
-  padding-right: 1em;
-  text-align: center;
 }
 .menu__item:first-child{
   padding-left: 0;
 }
 .menu__item:last-child{
   padding-right: 0;
+} 
+@media (max-width: 400px){
+  .menu__item > a > img{
+    width: 28px;
+    height: 28px;
+  }
 }
+/* header */ 
+
 
 /* Conteúdo */
 .content{
