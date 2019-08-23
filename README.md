@@ -27,6 +27,21 @@ Rode a Jekyll
 bundle exec jekyll serve
 ```
 
+Caso altere o arquivo assets/js/functions.js, utilize o Gulp CLI para mimificar o JavaScript.
+```
+sudo npm install -g gulp-cli
+```
+
+Instale as dependências:
+```
+npm install
+```
+
+Rodando o Gulp:
+```
+gulp
+```
+
 ## Contribuindo
 Para contribuir para esse leia o arquivo [CONTRIBUTING](CONTRIBUTING.md) para mais detalhes.
 

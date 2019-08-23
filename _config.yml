@@ -29,7 +29,6 @@ include: ['_pages']
 
 # Build settings
 markdown: kramdown
-theme: minima
 plugins:
   - jekyll-feed
 
@@ -38,14 +37,17 @@ algolia:
   application_id: '2GHCE399VU'
   index_name: 'dev_MARCO'
 
-# Exclude from processing.
-# The following items will not be processed, by default. Create a custom list
-# to override the default setting.
-# exclude:
-#   - Gemfile
-#   - Gemfile.lock
-#   - node_modules
-#   - vendor/bundle/
-#   - vendor/cache/
-#   - vendor/gems/
-#   - vendor/ruby/
+# SASS
+sass:
+  style: compressed
+  sass_dir: _sass
+
+exclude:
+  - package.json
+  - package-lock.json
+  - node_modules
+  - gulpfile.js
+  - .eslintrc.json
+  - .editorconfig
+  - Gemfile
+  - Gemfile.lock
