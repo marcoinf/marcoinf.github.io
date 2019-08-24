@@ -1,8 +1,7 @@
 .highlight {
   background-color: #333A40;
-  // border: 0.005em solid black;
   border-left: 0.25em solid rgba(235, 58, 58, 0.9);
-  padding: 1em;
+  padding: 0 0 1em 1em;
   margin-top: 1em;
   margin-bottom: 1em;
 
@@ -10,6 +9,24 @@
   overflow-x: auto;
   white-space: nowrap;
 }
+
+// Botão copiar
+.highlight > pre > div{
+  display: flex;
+  flex-direction: row-reverse;
+}
+.btn-copy{
+  color: #FFF;
+  background-color: #EB3A3A;
+  border: 0;
+  padding: 5px 10px;
+  cursor: pointer;
+}
+.btn-copy:hover{
+  background-color: rgba(235, 58, 58, 0.774);
+}
+// Botão copiar
+
 .highlighter-rouge{
   background: rgba(235, 58, 58, 0.9);
   color: #FFFFFF;

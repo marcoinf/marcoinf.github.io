@@ -61,6 +61,34 @@ document.querySelector("#theme").addEventListener("click", (event) => {
 cookies();
 theme();
 
+// Copiando o código
+// Adicionando ID em todas as figures com a classe highlight
+let codes = document.querySelectorAll('.highlight > pre > code');
+let countID = 0;
+codes.forEach((code) => {
+
+  // Setando um ID para cada caixa de código
+  code.setAttribute("id", "code" + countID);
+  
+  // Adicionar o botão copiar em todas as figures com a classe highlight
+  let btn = document.createElement('button');
+  btn.innerHTML = "Copy";
+  btn.className = "btn-copy";
+  btn.setAttribute("data-clipboard-action", "copy");
+  btn.setAttribute("data-clipboard-target", "#code" + countID);
+  
+  let div = document.createElement('div');
+  div.appendChild(btn);
+  
+  code.before(div);
+  // code.appendChild(btn);
+
+  countID++;
+}); 
+
+let clipboard = new ClipboardJS('.btn-copy');
+
+
 // Search
 function showSearch(){
   document.querySelector("#container-search").style.display = "block";
