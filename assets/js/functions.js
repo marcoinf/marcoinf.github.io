@@ -81,36 +81,7 @@ codes.forEach((code) => {
   div.appendChild(btn);
   
   code.before(div);
-  // code.appendChild(btn);
-
   countID++;
 }); 
 
 let clipboard = new ClipboardJS('.btn-copy');
-
-
-// Search
-function showSearch(){
-  document.querySelector("#container-search").style.display = "block";
-}
-document.querySelector("#showsearch").addEventListener("click", (event) => {
-  event.preventDefault();
-  showSearch();
-});
-
-var client = algoliasearch('2GHCE399VU', '3807d9576f2906fa1d363b090371b34f');
-  var index = client.initIndex('dev_MARCO');
-  autocomplete('#search-input', { hint: false }, [
-    {
-      source: autocomplete.sources.hits(index, { hitsPerPage: 5 }),
-      displayKey: 'title',
-      templates: {
-        suggestion: function(suggestion) {
-          return suggestion._highlightResult.title.value;
-        }
-      }
-    }
-  ]).on('autocomplete:selected', function(event, suggestion, dataset) {
-    console.log(window.location.host + suggestion.url);
-    window.location.href(window.location.host + suggestion.url);
-  });
