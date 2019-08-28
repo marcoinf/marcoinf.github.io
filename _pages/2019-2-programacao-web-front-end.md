@@ -21,7 +21,8 @@ date:   2019-08-09 16:12:00 -0400
 * [Guia Flexbox](https://css-tricks.com/snippets/css/a-guide-to-flexbox/)
 * [Guia Flexbox - pt-br](https://origamid.com/projetos/flexbox-guia-completo/)
 * [Flexbox Froggy](https://flexboxfroggy.com/)
-
+* [Caniuse](https://caniuse.com)
+* [Protótipo do site Minhas Séries](https://www.figma.com/file/BCeiBCoOgc0PIWSdLLWDM3qR/S%C3%A9ries?node-id=0%3A1)
 
 ## Avaliação da disciplina
 ### Trabalho 1
