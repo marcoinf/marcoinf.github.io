@@ -37,7 +37,7 @@ permalink: /about/
 }
 </style>
 
-<h2 class="contact__title">Entre em contato</h2>
+<h2 class="contact__title">Entre em contato:</h2>
 <form class="form" name="contact" method="POST" data-netlify="true">
   <div class="form__field">
     <div><label for="name" class="form__label">Nome: </label></div>
